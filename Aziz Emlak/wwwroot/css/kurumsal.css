@@ -1,0 +1,96 @@
+﻿.container {
+    width: 100%;
+    height: 100%;
+    background-color: #d2d2d2;
+    margin-top: 10vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 3vh;
+}
+
+.aciklama-container {
+    width: 80%;
+    background-color: #252527;
+    color: white;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10vh;
+    display: flex;
+    border-radius: 10px;
+}
+
+.image-container {
+    width: 100%;
+    height: 450px;
+}
+.image-container img {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.aciklama {
+    padding: 2vh;
+    width: 100%;
+    height:450px;
+    display:inline-block;
+}
+
+    .aciklama h2 {
+        font-size: 30px;
+        letter-spacing: 0.5px;
+    }
+
+    .aciklama hr {
+        margin: 10px 0;
+    }
+
+    .aciklama p {
+        text-align: justify;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    @media screen and (max-width:1200px)
+    {
+        .aciklama-container{
+            display:flex;
+            flex-direction:column;
+        }
+
+    }
+    @media screen and (max-width:700px) {
+        .image-container {
+            width: 100%;
+            height: 200px;
+        }
+
+            .image-container img {
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+            }
+        .aciklama-container {
+            display: flex;
+            flex-direction: column;
+            height:100%;
+        }
+                
+        .aciklama-container {
+            height:100%;
+        }
+        .aciklama p {
+            text-align: justify;
+            word-spacing: 1px;
+            letter-spacing: 0.7px;
+            font-size: 14px;
+        }
+        .aciklama-container {
+            width: 90%;
+        
+        }
+        .container {
+            border-radius: 0;
+        }
+    }

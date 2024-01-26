@@ -1,0 +1,93 @@
+﻿
+@model List<danisman>
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/profil.css">
+<div class="hero">
+    <img src="~/Media/StaticImage/azizz_Moment.jpg" alt="">
+    <div><h1>PROFİLİM</h1></div>
+</div>
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+           <div class="danisman-bilgileri">
+                <div class="danisman">
+                    <img src="/Media/img/@item.DanismanFotgrafi" alt="azizemlak Antalya">
+                    <h1>@item.DanismanAdi</h1>
+                    <a href="tel:@item.DanismanGsm"><i class="fa-solid fa-phone"><span>@item.DanismanGsm</span></i></a>
+                    <i class="fa-solid fa-envelope"><span>@item.DanismanEmail</span></i>
+                    <div class="danisman-icon">
+                        <a href="@item.DanismanFace"><i id="facee" class="fa-brands fa-facebook-f"></i></a>
+                        <a href="@item.DanismanInsta"><i id="instaa" class="fa-brands fa-instagram"></i></a>
+                        <a href="@item.DanismanTwitter"><i id="twitterr" class="fa-brands fa-twitter"></i></a>
+                        <a href="@item.DanismanWp"><i id="wp" class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>      
+                <div class="danisman-hakkinda">
+                    <div class="kisabilgi">
+                        <div class="tecrube">@item.Tecrube. Yıl</div>
+                        <div class="toplam-portfoy">@ViewBag.ptoplamı Pörtföy</div>
+                    </div>
+                    <div class="danisman-aciklama">
+                        <h1>Hakkımda</h1>
+                        <hr>
+                        <p>
+                           @item.DanismanAciklamasi
+                        </p>
+                    </div>
+                </div>
+           </div>
+    }
+    
+    <h2 class="h2">Portföylerim</h2>
+    <div class="portfoyler-container">
+        <div class="portfoyler">
+            @foreach (var i in ViewBag.portfoy as List<Aziz_Emlak.Models.portfoy>)
+            {
+                @if (i.Onay == true)
+                {
+                     <a href="~/Home/Portfoy/@i.id">
+                        <div class="portfoy">
+                            <div>
+                                <img src="~/Media/img/@i.Image" alt="azizemlak Antalya">
+                            </div>
+                            <div class="portfoy-bilgi">
+                                <div class="poetfoy-yazi">
+                                    @if (i.Baslik.Length <= 130)
+                                    {
+                                        <h3>@i.Baslik</h3>
+                                    }
+                                    else
+                                    {
+                                        <h3>@i.Baslik.Substring(0,i.Baslik.Substring(0,130).LastIndexOf(" "))...</h3>
+                                    }
+                                    <div class="portfoy-date">
+                                        <h4>@i.Durumu|@i.PortfoyTipi</h4>
+                                        <i class="fa-solid fa-calendar-days"><span>@(((DateTime)i.IlanTarihi).ToString("dd/MM/yyyy"))</span></i>
+                                    </div>
+                                </div>
+                                <div class="portfoy-fiyat">
+                                    <hr>
+                                    <div class="portfoy-icon">
+                                        <h2>@i.Fiyati.ToString("c0")</h2>
+                                        <div class="p-icon">
+                                            <i class="fa-solid fa-couch"><span>@i.OdaSayısı</span></i>
+                                            <i class="fa-solid fa-layer-group"><span>@i.BulunduguKat. Kat</span></i>
+                                            <i class="fa-solid fa-square"><span>100 m²</span></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+                   
+            } 
+
+        </div>
+    </div>
+</div>
+

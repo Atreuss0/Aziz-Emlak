@@ -1,0 +1,205 @@
+﻿
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #d2d2d2;
+    margin-top: 10vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 3vh;
+}
+
+.harita {
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+}
+
+iframe {
+    border-radius: 10px;
+    position: relative;
+}
+@media screen and (max-width:1700px){
+    .harita {
+        width: 85%;
+    }
+}
+iframe[src]{
+    width:100%;
+}
+
+.bilgi-container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 0 1vh;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.bilgi {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    margin-right:3vw;
+    margin-bottom:3vh;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 73vh;
+    background-color: white;
+
+}
+
+    .bilgi h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .bilgi hr {
+        margin: 2vh 0;
+    }
+
+    .bilgi i span {
+        letter-spacing: 1px;
+        font-size: 22px;
+        color: black;
+        margin: 0 !important;
+    }
+
+    .bilgi p {
+        text-align: justify;
+    }
+
+#twitter{
+    font-weight:400;
+}
+
+.telefon i {
+    margin-right: 5vh;
+}
+
+.bilgi a {
+    color: black;
+    font-size: 34px;
+    margin-right: 1vh;
+    transition: 0.5s ease;
+}
+
+.iletisim {
+    background-color: #272727cb;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    font-size: 30px;
+    border-radius: 5px;
+    margin-bottom: 3vh;
+    box-shadow: 1px 1px 4px black;
+    
+}
+
+    .iletisim h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+        color: white;
+        width:45vh;
+    }
+
+    .iletisim hr {
+        margin: 1vh 0;
+    }
+
+    .iletisim input {
+        width: 100%;
+        height: 60px;
+        border-radius: 5px;
+        border: none;
+        font-size: 24px;
+        padding: 1vh;
+        transition: 0.3s ease;
+    }
+
+    .iletisim textarea {
+        border-radius: 5px;
+        border: none;
+        padding: 1vh;
+        width: 100%;
+        font-size: 24px;
+        height: 200px;
+        transition: 0.3s ease;
+    }
+
+    .iletisim input:hover, textarea:hover {
+        box-shadow: 1px 1px 8px white;
+    }
+
+    .iletisim input:focus, textarea:focus {
+        box-shadow: 1px 1px 8px white;
+    }
+    .btn-ilet:hover {
+        box-shadow: 1px 1px 5px black;
+        color: white;
+        background-color: black;
+    }
+
+@media screen and (max-width:1200px) {
+
+    .bilgi-container {
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 1vh;
+    }
+    .bilgi {
+        width: 100%;
+        margin:3vh 0;
+    }
+    .iletisim  {
+        width: 100%;
+    }
+}
+@media screen and (max-width:900px){
+    .harita {
+        width: 95%;
+    }
+    iframe[src] {
+        height:45vh;
+    }
+    .container {
+        padding: 8vh 2vw;
+    }
+    .bilgi{
+        margin-right:0;
+        font-size:20px;
+    }
+        .bilgi h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
+            width:39vh;
+        }
+        .bilgi i span {
+            font-size: 20px;
+        }
+
+    .telefon i {
+        margin-right: 5vh;
+    }
+
+    .bilgi a {
+        font-size: 20px;
+    }
+    
+    .iletisim h2 {
+        width: 100%;
+    }
+    .hero {
+        display: none;
+    }
+
+    .container {
+        border-radius: 0;
+    }
+     
+}

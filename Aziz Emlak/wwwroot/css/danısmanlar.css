@@ -1,0 +1,176 @@
+﻿
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #d2d2d2;
+    margin-top: 10vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 3vh;
+}
+
+.danismanlar-container {
+    width: 75%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+    .danismanlar-container h2 {
+        margin: 2vh 2vh;
+        font-size: 30px;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+.brokerler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 8vw;
+    width: 100%;
+}
+
+.danismanlar {
+    padding: 2vh 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.danisman {
+    width: 300px;
+    height: 440px;
+    margin: 3vh 2vh;
+    margin-right: 4vh;
+    padding:0 1vw;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    text-align: left;
+    padding: 2vh;
+	transition:all 0.4s ease;
+}
+.danisman:hover{
+    box-shadow:1px 1px 10px black;
+	transform:scale(1.05);
+}
+    .danisman img {
+        object-fit: cover;
+        width: 100%;
+        height: 270px;
+        bottom: -10px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px black;
+    }
+
+    .danisman h3 {
+        letter-spacing: 1px;
+        font-weight: 400;
+        margin: 0.5vh 0;
+        color: #323031b3;
+    }
+
+    .danisman i {
+        color: #323031b3;
+        margin: 0.5vh 0;
+    }
+
+        .danisman i span {
+            margin-left: 1vh;
+        }
+
+#facee:hover {
+    color: #4267B2;
+    transform:scale(1.2);
+}
+
+#instaa:hover {
+    color: #F56040;
+    transform:scale(1.2);
+}
+
+#twitterr:hover {
+    color: #1DA1F2;
+    transform:scale(1.2);
+}
+
+#wp:hover {
+    color: #25D366;
+    transform:scale(1.2);
+}
+
+.danisman-icon {
+    display: flex;
+    align-items: center;
+    margin: 1vh 0;
+    font-size: 30px;
+}
+
+    .danisman-icon i {
+        margin-right: 3.5vh;
+        transition: 0.4s ease;
+    }
+    @media screen and (max-width:950px)
+    {
+        .danismanlar-container {
+            width: 95%;
+          
+        }
+        .danismanlar {
+            padding: 2vh 8vw;
+           
+        }
+        .danisman {
+           margin:3vh 0;
+           width:430px;
+           height:475px;
+        }
+		   .danisman-icon{
+           justify-content:left;
+        }
+      
+            .danisman img {
+               
+                width: 100%;
+                height: 300px;        
+      
+            }
+			.danisman a {
+			  margin-right:3vh;;
+        }
+			.danisman i {
+			  margin-bottom:10px;
+        }
+		  .danisman i span {
+            font-size:18px;
+			  margin-bottom:10px;
+        }
+        .container {
+            border-radius: 0;
+			padding: 3vh 0;
+        }
+		#facee {
+			color: #4267B2;
+
+		}
+
+		#instaa {
+			color: #F56040;
+
+		}
+
+		#twitterr {
+			color: #1DA1F2;
+
+		}
+
+		#wp {
+			color: #25D366;
+
+		}
+
+    }

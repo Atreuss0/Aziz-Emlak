@@ -1,0 +1,112 @@
+﻿
+@model List<danisman>
+@{
+    ViewData["Title"] = "Index";   
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";  
+    
+}
+<link rel="stylesheet" href="~/css/Panel/Profilim.css">
+<div class="content">
+    <h1>PROFİLİM</h1>
+    <hr>
+    @using (Html.BeginForm("Index", "Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @foreach (var i in Model)
+        {
+        <div class="profil-duzenle">
+            <div class="cow">
+                <div class="edit-image">                
+                    <img src="/Media/img/@i.DanismanFotgrafi" alt="">
+
+                     @Html.TextBox("DanismanFotgrafi",null,htmlAttributes:new{@type="file" ,@style="display:none;",@accept="image/*",@id="up"})
+                     <label for="up" class="upload">
+                         <i class="fa-solid fa-image"></i>
+                         <h3>Fotoğraf Secin</h3>                           
+                     </label> 
+                        
+                </div>                   
+                <div class="edit-1" style="padding-left:16.5vw;">
+                
+                        @Html.TextBox("id",i.id,htmlAttributes:new{@type="hidden"})
+                        @Html.TextBox("Tecrube",i.Tecrube,htmlAttributes:new{@type="hidden"})
+                        @Html.TextBox("Role",i.Role,htmlAttributes:new{@type="hidden"})
+                            
+                </div>
+                <div class="edit-1">
+                    <h2>Hakkımda : </h2>
+                
+                        @Html.TextArea("DanismanAciklamasi",i.DanismanAciklamasi)
+                
+                </div>
+            </div>
+        <div class="cow">
+            <div class="edit">
+                   <h2>Ad Soyad </h2> <h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        @Html.TextBox("DanismanAdi",i.DanismanAdi)
+                
+
+            </div>
+            <div class="edit">
+                        <h2>Gsm No  </h2> <h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        @Html.TextBox("DanismanGsm",i.DanismanGsm,htmlAttributes:new{ @placeholder="Gsm Numaranız",@type="tel",@maxlength="11"})
+                
+
+            </div>
+            <div class="edit">
+                        <h2>E-Posta </h2><h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        @Html.TextBox("DanismanEmail",i.DanismanEmail,htmlAttributes:new{ @placeholder="E-Posta Adresiniz",@type="email"})
+                
+            </div>
+            <div class="edit">
+                        <h2>Facebook </h2><h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-brands fa-facebook-f" ></i>
+                        </div>
+                        @Html.TextBox("DanismanFace",i.DanismanFace)
+                
+
+            </div>
+            <div class="edit">
+                        <h2>İnstagram  </h2><h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        @Html.TextBox("DanismanInsta",i.DanismanInsta)
+                
+
+            </div>
+            <div class="edit">
+                        <h2>Twitter  </h2><h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-brands fa-twitter" ></i>
+                        </div>
+                        @Html.TextBox("DanismanTwitter",i.DanismanTwitter)
+                
+
+            </div>
+            <div class="edit">
+                        <h2>Whatsapp  </h2><h3>:</h3>
+                        <div class="ico">
+                            <i class="fa-brands fa-whatsapp" ></i>
+                        </div>
+                        @Html.TextBox("DanismanWp",i.DanismanWp,htmlAttributes:new{@type="tel",@maxlength="11"})
+                
+            </div>
+            <div class="submit">
+                <input type="submit" value="Profili Kaydet">
+            </div>
+        </div>
+    </div>
+    
+        }
+    }
+</div>  

@@ -1,0 +1,76 @@
+﻿
+@model List<mesajlar>
+@{
+    ViewData["Title"] = "Iletisim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/iletisim.css">
+<div class="hero">
+    <img src="~/Media/StaticImage/azizz_Moment.jpg" alt="">
+    <div><h1>İLETİŞİM</h1></div>
+</div>
+<div class="container">
+    <div class="harita">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6379.781536149735!2d30.72256665045866!3d36.9168759940753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38571167ee585%3A0x5ac6a3f387930d32!2sAziz%20Emlak!5e0!3m2!1str!2str!4v1675810906007!5m2!1str!2str" width="1290" height="560" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="bilgi-container">
+        <div class="bilgi">
+            <h1>İletişim Bilgilerimiz</h1>
+            <hr>
+            <i class="fa-solid fa-location-dot"> <span>Teomanpaşa, Güneş Cd., 07260 Kepez/Antalya</span></i>
+            <hr>
+            <div class="telefon">
+                <i class="fa-solid fa-phone"> <span> 0535 647 39 72</span></i>
+                <i class="fa-solid fa-phone"> <span> 0532 113 33 98</span></i>
+            </div>
+            <hr>
+            <i class="fa-solid fa-envelope"><span> azizemlak@gmail.com</span></i>
+            <hr>
+            <a id="face" href="https://www.facebook.com/aziz.berk.77?mibextid=ZbWKwL"><i class="fa-brands fa-facebook"><span id="face"> Aziz Berk</span></i></a>
+            <hr>
+            <a id="insta" href="https://www.instagram.com/azizemlak07/?igshid=YmMyMTA2M2Y%3D"><i class="fa-brands fa-instagram"><span id="insta"> azizemlak07</span></i></a>
+            <hr>
+            <a id="twitter" href="https://www.instagram.com/talhatok_/?igshid=ZDdkNTZiNTM%3D"><i class="fa-solid fa-clapperboard"><span id="twitter"> Talha Tok </span> </i></a>
+
+        </div>
+        <div class="iletisim">
+            @using (Html.BeginForm("Iletisim","Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h1>Mesaj Gönder</h1>
+                <hr>
+                @Html.TextBox("AdiSoyadi",null,htmlAttributes:new{ @placeholder="Adınız Soyadınız" ,@required="true"})
+                @Html.TextBox("mesajtarihi",DateTime.Now,htmlAttributes:new{ @type="hidden"})
+                <hr>
+                @Html.TextBox("Eposta",null,htmlAttributes:new{ @placeholder="E-Posta Adresiniz",@type="email",@required="true"})
+                <hr>
+                @Html.TextBox("Gsm",null,htmlAttributes:new{ @placeholder="Telefon Numaranız",@type="tel",@maxlength="11",@required="true"})
+                <hr>
+                @Html.TextArea("Mesaj",null,htmlAttributes:new{ @placeholder="Mesajınız...",@required="true"})
+                <hr>
+                <style>
+                    button:hover{
+                        box-shadow: 1px 1px 5px black;
+                        color: white;
+                        background-color: black;
+                    }
+                    button{
+                        cursor: pointer;
+                        color: black;
+                        border: none;
+                        height: 60px;
+                        width: 100%;
+                        text-align: center;
+                        background-color: white;
+                        border-radius: 5px;
+                        padding: 1.5vh;
+                        font-size: 26px;
+                        transition: 0.5s ease;
+                    }                
+                </style>
+                <button> <i class="fa-solid fa-paper-plane" style="margin-right: 1vh;"></i>Gönder </button>
+
+            }
+        </div>            
+    </div>
+</div>
+

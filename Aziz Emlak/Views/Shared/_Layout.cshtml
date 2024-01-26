@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aziz emlak, Bütçenize uygun Kiralık ve Satılık evler. Evlerinizn tadilat işlemleri. Arsa ve arazi alım satımları ">
+    <meta name="keyword" content="aziz emlak,emlak,ev,kiralık ev,satılık ev,arsa,kiralık,evimi satmak istiyorum,evimi kiralamak istiyorum,kiralık arsa ">
+    <link rel="stylesheet" href="~/css/layout.css">
+    <link rel="icon" href="~/favico.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVm²hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Aziz Emlak | Kiralık Evler-Satılık Evler | Antalya</title>
+
+   
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">
+            <nav class="navbar">
+                <div class="navbar-logo">
+                    <a href="~/Home/Index">
+                        <img class="logo-degis" src="~/Media/StaticImage/logo.png" alt="">
+                    </a>                  
+                </div>
+                <div class="navbar-item">
+                    <ul class="navbar-links">
+                        <li><a class="nav-link" href="~/Home/Index">ANASAYFA</a></li>
+                        <li><a class="nav-link" href="~/Home/kurumsal">KURUMSAL</a></li>
+                        <li><a class="nav-link" href="~/Home/Portfoyler">PORTFÖYLER</a></li>
+                        <li><a class="nav-link" href="~/Home/Danısmanlar">DANIŞMANLAR</a></li>
+                        <li><a class="nav-link" href="~/Home/Iletisim">İLETİŞİM</a></li>
+                    </ul>
+                </div>
+                <div class="islem">
+                    <a class="islem-gir" href="~/Home/girisyap">Giriş Yap</a>
+                    <a class="islem-ver" href="~/Home/Iletisim">İlan ver</a>
+                </div>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>            
+        </div>
+        @RenderSection("heroo",false)
+    </div>  
+    
+    @RenderBody()
+
+    <footer>
+        <div class="foooter-ust">
+            <div class="footer-cards">
+                <div class="footer-card">
+                    <img src="~/Media/StaticImage/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-card">
+                    <h2>İletişim</h2>
+                    <hr>
+                    <i class="fa-solid fa-square-phone"> <span> 0535 647 39 72</span></i>
+                    <i class="fa-solid fa-square-envelope"><span> azizemlak@gmail.com</span></i>
+                    <i id="adrescenter" class="fa-solid fa-location-dot"> <span>Teomanpaşa, Güneş Cd.,07260 Kepez/Antalya</span></i>
+                </div>
+                <div class="footer-card">
+                        <h2>Hizli Erişim</h2>
+                        <hr>
+                        <li><a href="~/Home/Index">ANASAYFA</a></li>
+                        <li><a href="~/Home/kurumsal">KURUMSAL</a></li>
+                        <li><a href="~/Home/Portfoyler">PORTFÖYLER</a></li>
+                        <li><a href="~/Home/Danısmanlar">DANIŞMANLAR</a></li>
+                        <li><a href="~/Home/Iletisim">İLETİŞİM</a></li>
+                </div>
+                <div class="footer-card">
+                    <h2>Sosyal Medya</h2>
+                    <hr>
+                    <a href="https://www.facebook.com/aziz.berk.77?mibextid=ZbWKwL"><i id="face" class="fa-brands fa-square-facebook"><span>Aziz Berk</span></i></a>
+                    <a href="https://www.instagram.com/azizemlak07/?igshid=YmMyMTA2M2Y%3D"><i id="insta" class="fa-brands fa-instagram"><span>azizemlak07</span></i></a>
+                    <a href="https://wa.me/905356473972"><i id="wp" class="fa-brands fa-whatsapp"><span>Aziz Berk</span></i></a>
+                    <a href="https://www.instagram.com/talhatok_/?igshid=ZDdkNTZiNTM%3D"><i id="talha" class="fa-solid fa-clapperboard"><span>Talha Tok</span></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footter-alt">
+            <h5>© 2023 azizemlakantalya.com Tüm Hakları Saklıdır. by : <a href="#">Muhammet Gür</a></h5>
+        </div>
+    </footer>
+
+    <script src="~/js/mobil.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script type="text/javascript">
+
+            var navbarLinks = document.getElementsByClassName("navbar-links")[0];
+            var navItems = navbarLinks.getElementsByClassName("nav-link");
+      
+            var currentUrl = window.location.href;
+      
+            for (var i = 0; i < navItems.length; i++) {
+                var navItem = navItems[i];
+            
+                var navItemUrl = navItem.href;
+               
+                if (currentUrl === navItemUrl) {                  
+                    navItem.classList.add("active");
+                } else {                  
+                    navItem.classList.remove("active");
+                }
+            }
+    </script>
+      
+</body>
+</html>

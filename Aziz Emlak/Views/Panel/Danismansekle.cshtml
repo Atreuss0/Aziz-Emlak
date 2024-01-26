@@ -1,0 +1,151 @@
+﻿@model List<DanismanImage>
+@{
+    ViewData["Title"] = "Danismansekle";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+
+}
+<link rel="stylesheet" href="~/css/Panel/danismansekle.css">
+<div class="content">
+    @using (Html.BeginForm("Danismansekle", "Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="profil-duzenle">
+
+            <div class="cow">
+                <h2>Danışman Bilgileri</h2>
+                <div class="edit">
+                    <h2>Görev Tanımı  </h2>
+                    <div class="icon">
+                        <div class="ico">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                        </div>                      
+                        <select name="Role" required>
+                            <option value="Danışman">Danışman</option>
+                            <option value="Ofis">Ofis Görevlisi</option>
+                            <option value="Broker">Broker</option>                      
+                        </select>
+                    </div>
+                </div>
+                <div class="edit">
+                    <h2>Ad Soyad  </h2>
+                    <div class="icon">
+                        <div class="ico">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        @Html.TextBox("DanismanAdi",null,htmlAttributes:new{@required="true"})
+                    </div>
+                </div>
+                <div class="edit">
+                    <h2>Gsm Numarası </h2>
+                    <div class="icon">
+                        <div class="ico">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        @Html.TextBox("DanismanGsm",null,htmlAttributes:new{@type="tel",@maxlength="11",@required="true"})
+                    </div>
+                </div>
+                <div class="edit">
+                    <h2>E-Posta Adresi </h2>
+                    <div class="icon">
+                        <div class="ico">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        @Html.TextBox("DanismanEmail",null,htmlAttributes:new{@type="email",@required="true"})
+                    </div>
+                </div>
+                <div class="edit">
+                    <h2>Tecrübe </h2>
+                    <div class="icon">
+                        <div class="ico">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        @Html.TextBox("Tecrube",null,htmlAttributes:new{@type="Number",@required="true"})
+                    </div>
+                </div>
+                <div class="edit">
+                    <h2>Hakkımda </h2>
+                    <div class="icon">
+
+                        @Html.TextArea("DanismanAciklamasi",null,htmlAttributes:new{@required="true"})
+                    </div>
+                </div>
+            </div>
+            <div class="cow-2">
+                <div class="cow-sosyal">
+                    <h2>Sosyal Medya Hesapları</h2>
+                    <div class="edit">
+                        <h2>Facebook </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-brands fa-facebook-f" style="color:#4267B2;"></i>
+                            </div>
+                            @Html.TextBox("DanismanFace",null,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Instagram </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-brands fa-instagram" style="color:#F77737;"></i>
+                            </div>
+                            @Html.TextBox("DanismanInsta",null,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Twitter </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-brands fa-twitter" style="color:#1DA1F2;"></i>
+                            </div>
+                            @Html.TextBox("DanismanTwitter",null,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Whatsapp </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
+                            </div>
+                            @Html.TextBox("DanismanWp",null,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                </div>
+                <div class="cow-kullanici">
+                    <h2>Kullanıcı Bilgileri</h2>
+                    <div class="edit">
+                        <h2>Kullanıcı Adı </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            @Html.TextBox("KullaniciAdi",null,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Şifre </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            @Html.TextBox("Sifre",null,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit-check">
+                        <h2>Fotoğraf : </h2>
+                        <div class="icon">
+                            @Html.TextBox("DanismanFotgrafi",null,htmlAttributes:new{@type="file",@accept="image/*",@required="true"})
+                        </div>
+                    </div>
+
+                </div>
+               
+            </div>
+
+        </div>
+
+        <div class="submit">
+
+            <input type="submit" value="Profili Kaydet">
+        </div>
+    }
+</div>

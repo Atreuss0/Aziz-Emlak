@@ -1,0 +1,96 @@
+﻿
+@model IPagedList<mesajlar>
+@{
+    ViewData["Title"] = "Mesajlar";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/Panel/mesajlar.css">
+<div class="content">
+    <h1>MESAJLAR</h1>
+    <hr>
+    <table class="table">
+        <thead>
+
+            <tr>
+                <th> Mesaj Tarihi</th>
+                <th> Adı Soyadı</th>
+                <th> Gsm Numarası</th>
+                <th> E-posta Adresi</th>
+                <th> Mesajı</th>
+                <th> Düzenle</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var i in Model)
+            {
+               <tr>
+                     <td> @(((DateTime)i.mesajtarihi).ToString("dd/MM/yyyy"))</td>
+                     <td> @i.AdiSoyadi</td>
+                     <td> @i.Gsm</td>
+                     <td> @i.Eposta</td>
+                     <td> 
+                        @if(i.mesaj.Length<145)
+                        {
+                            <text>@i.mesaj </text>
+                        }
+                        else
+                        {
+                            <text>@i.mesaj.Substring(0,i.mesaj.Substring(0,145).LastIndexOf(" "))... </text>
+                        }
+                     </td>
+                     <td>
+                        <a class="Click-here" href="#" data-messageid="@i.Id"><i id="i-1" class="fa-solid fa-clipboard-list"></i></a>
+                        <a href="~/Panel/MesajlarDelete/@i.Id"><i id="i-2" class="fa-solid fa-trash-can"></i></a>
+                            
+                        <div class="custom-model-main" id="@i.Id">
+                            <div class="custom-model-inner">        
+                            <div class="close-btn">×</div>
+                                <div class="custom-model-wrap">
+                                    <div class="pop-up-content-wrap">
+                                        <div class="pop-up-icerik"> <h3>Adı Soyadı :</h3>  @i.AdiSoyadi </div>                                     
+                                        <hr/>
+                                        <div class="pop-up-icerik"> <h3>Gsm Numarası :</h3> @i.Gsm </div>
+                                        <hr/>
+                                        <div class="pop-up-icerik"> <h3>E-posta :</h3>  @i.Eposta </div>
+                                        <hr/>
+                                         @i.mesaj 
+                                        <hr/>
+                                        <div class="pop-up-icerik"> <h4 style="margin-right:6px;">Mesaj Tarihi :</h4>@(((DateTime)i.mesajtarihi).ToString("dd/MM/yyyy")) </div>
+                                    </div>
+                                </div>  
+                            </div>  
+                            <div class="bg-overlay"></div>
+                        </div> 
+                     </td>       
+               </tr> 
+            }
+         
+        </tbody>
+            
+    </table>
+    <div class="pagelist">
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Mesajlar",new {page}))
+    </div>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script>
+    $(".Click-here").on('click', function () {
+        var messageId = $(this).data('messageid');
+        $("#" + messageId).addClass('model-open');
+    });
+    $(".close-btn, .bg-overlay").click(function () {
+        $(".custom-model-main").removeClass('model-open');
+    });
+    $(".Click-here").on('click', function () {
+       
+    });
+</script>
+
+

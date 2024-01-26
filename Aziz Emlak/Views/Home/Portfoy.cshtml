@@ -1,0 +1,617 @@
+﻿
+@model List<portfoy>
+@{
+    ViewData["Title"] = "Portfoy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/portfoy.css">
+<div class="hero">
+    <img src="~/Media/StaticImage/azizz_Moment.jpg" alt="">
+    <div><h1>PORTFOY</h1></div>
+</div>
+
+<div class="container">
+    @foreach (var i in Model)
+    {
+        
+        <div class="ust">
+            <div class="images">
+
+                <img class="big-image" src="~/Media/img/@i.Image" alt="">
+
+                <div class="image">
+                    @foreach (var item in ViewBag.resim)
+                    {
+                        <a data-lightbox="photos" href="~/Media/img/@item.Name"><img class="img-fluid" src="~/Media/img/@item.Name" alt=""></a>
+                    }
+                </div>
+
+            </div>
+            <div class="image-container">
+                <div class="image-ozelikler">
+                    <div class="fiyat">
+                        <h2>@i.Fiyati.ToString("c0")</h2>
+                        <h3>@i.Ilce/@i.Mahalle mah.</h3>
+                    </div>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>İlan tarihi</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@(((DateTime)i.IlanTarihi).ToString("dd/MMM/yyyy"))</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Emlak Durumu</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.Durumu</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>m²(Brüt)</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.Mburut m²</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>m²(Net)</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.Mnet m²</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Oda sayısı</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.OdaSayısı</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Bina yaşı</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.BinaYasi</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Bulunduğu kat</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.BulunduguKat</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Kat sayısı</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.KatSayısı</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Isıtma</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.Isıtma</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Banyo sayısı</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.BanyoSayısı</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Eşyalı</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@if(i.Esyalı==true)
+                                {
+                                    <text>Evet</text>
+                                }
+                                else
+                                {
+                                    <text>Hayır</text>
+                                }
+                            </h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Site icerisinde</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@if(i.Esyalı==true)
+                                {
+                                    <text>Evet</text>
+                                }
+                                else
+                                {
+                                    <text>Hayır</text>
+                                }
+                            </h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ozelik">
+                        <div class="ozelik-adi">
+                            <h3>Aidat</h3>
+                        </div>
+                        <div class="tanimi">
+                            <h4>@i.Aidat TL</h4>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="danisman-container">
+                    @foreach (var p in Model)
+                    {
+                         @foreach (var item in ViewBag.danisman as List<Aziz_Emlak.Models.danisman>)
+                         {
+                             @if (item.id==@p.danismanid)
+                             {
+                             <a href="~/Home/Profil/@item.id">
+                                <div class="danisman">
+                                    <img src="/Media/img/@item.DanismanFotgrafi" alt="">
+                                    <h3>@item.DanismanAdi</h3>
+                                    <a href="tel:@item.DanismanGsm"><i class="fa-solid fa-phone"><span>@item.DanismanGsm</span></i></a>
+                                    <i class="fa-solid fa-envelope"><span>@item.DanismanEmail</span></i>
+                                    <div class="danisman-icon">
+                                        <a href="@item.DanismanFace"><i id="face" class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="@item.DanismanInsta"><i id="insta" class="fa-brands fa-instagram"></i></a>
+                                        <a href="@item.DanismanTwitter"><i id="twitter" class="fa-brands fa-twitter"></i></a>
+                                        <a href="@item.DanismanWp"><i id="wp" class="fa-brands fa-whatsapp"></i></a>
+                                    </div>
+                                </div>
+                              </a>
+                             }
+                   
+                         }
+                    }
+               
+          
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="alt">
+            <div class="aciklama">
+                <h1>Acıklama</h1>
+                <div class="p">                   
+                     <p>@Html.Raw(i.KısaAciklama) </p>                             
+                </div>
+            </div>
+            <div class="discephe">
+                <h1>Özelikler</h1>
+                <div class="cephe">
+                    <h2>Cephe</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Kuzey==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Kuzey</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Guney==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Güney</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Bati==true ? " fa-solid fa-check ":"null ")  "></i>
+                                <h3>Batı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Dogu==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Doğu</h3>
+                            </div>
+                            <div class="item">
+                                <h3></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe">
+                    <h2>İc Özelikler</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.ADSL==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>ADSL</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.AkiliEv==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Akıllı ev</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Alarm==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Alarm</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.AlaturkaTuvalet==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Alaturka tuvalet</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.AmerikanMutfak==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Amerikan mutfak </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.CelikKapi==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Çelik kapı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.DusaKabin==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Duşa kabin</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.EbeveynBanyosu==true ? " fa-solid fa-check ":"null")  "></i>                               
+                                <h3>Ebeveyn banyosu</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.IsiCam==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Isı cam</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Diafon==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Görüntülü diafon </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Kuvet==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Küvet</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.KartonpiyerTavan==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Kartonpiyerli tavan</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Teras==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Teras</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Kiler==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Kiler</h3>
+                            </div>
+                            <div class="item">                               
+                                <h3></h3>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe">
+                    <h2>Dış özelikler</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.SesYalıtımı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Ses yalıtımı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.IsıYalıtımı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Isı yalıtımı</h3>
+
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Jenerator==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Jenerator</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.KameraSistemi==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Kamera sistemi</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Kapici==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3> Kapıcı</h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.OtoparkAcık==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Otopark-acık</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.OtoparkKapalı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Otopark-kapalı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.KabloTv==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Kablo tv</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.SporAlanı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Spor alanı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.SuDeposu==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3> Su deposu</h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.YanginMerdiveni==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Yangın merdiveni</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.YüzmeHavuzuAcik==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Yüzme havuzu-acık</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.YüzmeHavuzuKapalı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Yüzme havuzu-kapalı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Asansor==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Asansör</h3>
+                            </div>
+                            <div class="item">
+                                
+                                <h3>  </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe">
+                    <h2>Muhit</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.AlısverisMerkezi==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Alışveriş merkezi</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Camii==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Cami</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Belediye==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Belediye</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.DenizeSifir==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Denize sıfır</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Eczane==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Eczane </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Hastane==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Hastane</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.İlkOkul==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>İlk okul</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.OrtaOkul==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Orta okul</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Lise==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3> Lise</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Universite==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Üniversite </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Park==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Park</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.SaglikOcagi==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Sağlık ocağı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.İtfaye==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>İtfaye</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.SehirMerkezi==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Şehir Merkezi</h3>
+                            </div>
+                            <div class="item">
+                                <h3> </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <h3></h3>
+                            </div>
+                            <div class="item">
+                                <h3> </h3>
+                            </div>
+                            <div class="item">
+                                <h3></h3>
+                            </div>
+                            <div class="item">
+                                <h3> </h3>
+                            </div>
+                            <div class="item">
+                                <h3></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe">
+                    <h2>Ulaşım</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.AnaYol==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Ana yol</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Cadde==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Cadde</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Dolmus==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Dolmuş</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.E5==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>E5</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Havaalanı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Havaalanı </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Metrobus==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Metrobüs</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.OtobusDuragı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Otobus durağı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Tramvay==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Tramvay</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.TEM==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>TEM</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Metro==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Metro </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe">
+                    <h2>Manzara</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Deniz==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Deniz</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Doga==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Doğa</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Sehir==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Şehir</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.ParkYesilAlan==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Park/Yeşil alan</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Gol==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Göl </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe">
+                    <h2>Konut tipi</h2>
+                    <div class="cephe-item">
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.AraKat==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Ara kat</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.AraKatDublex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Ara kat dublex</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.BahceDublex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Bahçe dublex</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Bahceli==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Bahçeli</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.CatıDublex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Catı dublexi </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Forlex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Forlex</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.DukkanUstu==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Dükkan üstü</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.GirisKatı==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Giriş katı</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.TersDublex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Ters dublex</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Dublex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3> dublex </h3>
+                            </div>
+                        </div>
+                        <div class="item-container">
+                            <div class="item">
+                                <i class=" @(i.Triplex==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Triplex</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.Mustakil==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Müstakil</h3>
+                            </div>
+                            <div class="item">
+                                <i class=" @(i.ZeminKat==true ? " fa-solid fa-check ":"null")  "></i>
+                                <h3>Zemin kat</h3>
+                            </div>
+                            <div class="item">
+                                <h3> </h3>
+                            </div>
+                            <div class="item">
+                                <h3>  </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

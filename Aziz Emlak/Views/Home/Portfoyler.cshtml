@@ -1,0 +1,171 @@
+﻿
+@model IPagedList<portfoy>
+@{
+    ViewData["Title"] = "Portfoyler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/portfoyler.css">
+<div class="hero">
+    <img src="~/Media/StaticImage/azizz_Moment.jpg" alt="">
+    <div><h1>PORTFOYLER</h1></div>
+</div>
+ @using (Html.BeginForm("Portfoyler","Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+ {
+<div class="container">
+    <div class="portfoyler-container">      
+            <div class="filtre">
+                <div class="row">           
+                    <div class="filtre-yazi">
+                        <h4>İlce</h4>
+                    </div>              
+                    <div class="select">
+                        <select name="Ilce" class="select">
+                            <option value="Hepsi">Hepsi</option>
+                            <option value="Kepez">Kepez</option>
+                            <option value="Muratpaşa">Muratpaşa</option>
+                            <option value="Konyaaltı">KonyaAltı</option>
+                            <option value="Döşemealtı">DöşemeAltı</option>
+                            <option value="Aksu">Aksu</option>
+                            <option value="Akseki">Akseki</option>
+                            <option value="Alanya">Alanya</option>
+                            <option value="Elmalı">Elmalı</option>
+                            <option value="Finike">Finike</option>
+                            <option value="Gazipaşa">Gazipaşa</option>
+                            <option value="Gündoğmuş">Gündoğmuş</option>
+                            <option value="İbradi">İbradı</option>
+                            <option value="Demre">Demre</option>
+                            <option value="KaŞ">Kaş</option>
+                            <option value="Korkuteli">Korkuteli</option>
+                            <option value="Kumluca">Kumluca</option>
+                            <option value="Manavgat">Manavgat</option>
+                            <option value="Serik">Serik</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="filtre-yazi">
+                        <h4>Pörtföy tipi</h4>
+                    </div>
+                    <div class="select">
+                        <select name="PortfoyTipi" class="select">
+                            <option value="Hepsi">Hepsi</option>
+                            <option value="Konut">Konut</option>
+                            <option value="Arsa-arazi">Arsa-arazi</option>
+                            <option value="İş yeri">İş Yeri</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="filtre-yazi">
+                        <h4>Konut Tipi</h4>
+                    </div>
+                    <div class="select">
+
+                        <select name="KonutTipi" class="select">
+                            <option value="Hepsi">Hepsi</option>
+                            <option value="Daire">Daire</option>
+                            <option value="Mustakil">Mustakil </option>
+                            <option value="Dağ Evi">Dağ evi</option>
+                            <option value="Konak">Konak</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Yazlık">Yazlık</option>
+                            <option value="Yalı">Yalı</option>
+                            <option value="Köy Evi">Koy evi</option>
+                            <option value="Rezidans">Rezidans</option>
+                            <option value="Prefabrik">Prefabrik</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="filtre-yazi">
+                        <h4>Eşyalı</h4>
+                    </div>
+                    <div class="select">
+
+                        <select name="Esyalı" class="select">
+                            <option value="Hepsi">Hepsi</option>
+                            <option value="true">Evet</option>
+                            <option value="false">Hayır</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="filtre-yazi">
+                        <h4>Portfoy Durumu</h4>
+                    </div>
+                    <div class="select">
+
+                        <select name="Durumu" class="select">
+                            <option value="Hepsi">Hepsi</option>
+                            <option value="Kiralık">Kiralık</option>
+                            <option value="Satılık">Satılık</option>
+                            <option value="Devren Kiralık">Devren Kiralık</option>
+                            <option value="Devren Satılık">Devren Satılık</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="filtre-yazi">
+                        <h4>Sıralama</h4>
+                    </div>
+                    <div class="select">
+
+                        <select name="Sıralama" class="select">
+                            <option value="YE">Yenıden Eskiye</option>
+                            <option value="EY">Eskiden Yeniye</option>
+                            <option value="PU">Pahalıdan Ucuza</option>
+                            <option value="UP">Ucuzdan Pahalıya</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" value="Filtrele"> 
+            </div>
+        <div class="portfoyler">
+            @foreach (var i in Model)
+            {
+                @if (i.Onay == true)
+                {
+                    <a href="~/Home/Portfoy/@i.id">
+                        <div class="portfoy">
+                            <div>
+                                 <img src="~/Media/img/@i.Image" alt="azizemlak Antalya">
+                            </div> 
+                            <div class="portfoy-bilgi">
+                                <div class="portfoy-yazi">
+                                    @if (i.Baslik.Length <= 100)
+                                    {
+                                            <h3>@i.Baslik</h3>
+                                    }
+                                    else
+                                    {
+                                            <h3>@i.Baslik.Substring(0,i.Baslik.Substring(0,100).LastIndexOf(" "))...</h3>
+                                    }
+                                    <div class="portfoy-date">
+                                        <h4>@i.Durumu|@i.PortfoyTipi</h4>
+                                        <i class="fa-solid fa-calendar-days"><span>@(((DateTime)i.IlanTarihi).ToString("dd/MM/yyyy"))</span></i>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="portfoy-fiyat">                                 
+                                    <div class="portfoy-icon">
+                                        <h2>@i.Fiyati.ToString("c0")</h2>
+                                        <div class="p-icon">
+                                            <i class="fa-solid fa-couch"><span>@i.OdaSayısı</span></i>
+                                            <i class="fa-solid fa-layer-group"><span>@i.BulunduguKat . Kat</span></i>
+                                            <i class="fa-solid fa-square"><span>@i.Mburut m²</span></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+
+            }
+            <br />
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Portfoyler",new {page}))
+        </div>
+    </div>
+</div>
+}

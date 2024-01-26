@@ -1,0 +1,157 @@
+﻿
+@model List<danisman>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+
+}
+<link rel="stylesheet" href="~/css/Panel/danismansekle.css">
+<div class="content">
+    @using (Html.BeginForm("DanismansDüzenle", "Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {       
+
+    <div class="profil-duzenle">
+       @foreach (var i in Model)
+       {      
+        <div class="cow">
+            <h2>Danışman Bilgileri</h2>
+            <div class="edit">
+                <h2>Görev Tanımı  </h2>
+                <div class="icon">
+                    <div class="ico">
+                        <i class="fa-solid fa-clipboard-user"></i>
+                    </div>
+                      <select name="Role" required>
+                            <option selected value="@i.Role">@i.Role</option>
+                            <option value="Ofis">Ofis Görevlisi</option>
+                            <option value="Danışman">Danışman</option>
+                      </select>
+                </div>
+            </div>
+            <div class="edit">
+                <h2>Ad Soyad  </h2>
+                <div class="icon">
+                    <div class="ico">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                            @Html.TextBox("DanismanAdi",i.DanismanAdi,htmlAttributes:new{@required="true"})
+                </div>
+            </div>
+            <div class="edit">
+                <h2>Gsm Numarası </h2>
+                <div class="icon">
+                    <div class="ico">
+                            <i class="fa-solid fa-phone"></i>
+                    </div>
+                            @Html.TextBox("DanismanGsm",i.DanismanGsm,htmlAttributes:new{@type="tel",@maxlength="11",@required="true"})
+                </div>
+            </div>
+            <div class="edit">
+                 <h2>E-Posta Adresi </h2>
+                 <div class="icon">
+                     <div class="ico">
+                            <i class="fa-solid fa-envelope"></i>
+                     </div>
+                            @Html.TextBox("DanismanEmail",i.DanismanEmail,htmlAttributes:new{@type="email",@required="true"})
+                 </div>
+            </div>            
+            <div class="edit">
+                 <h2>Tecrübe </h2>
+                 <div class="icon">
+                     <div class="ico">
+                            <i class="fa-solid fa-star"></i>
+                     </div>
+                            @Html.TextBox("Tecrube",i.Tecrube,htmlAttributes:new{@type="Number",@required="true"})
+                 </div>
+            </div>
+            <div class="edit">
+                <h2>Hakkımda </h2>
+                <div class="icon">
+
+                            @Html.TextArea("DanismanAciklamasi",i.DanismanAciklamasi,htmlAttributes:new{@required="true"})
+
+                </div>
+            </div>
+        </div>
+        <div class="cow-2">
+                <div class="cow-sosyal">
+                    <h2>Sosyal Medya Hesapları</h2>
+                    <div class="edit">
+                        <h2>Facebook </h2>
+                        <div class="icon">
+                            <div class="ico">
+                            <i class="fa-brands fa-facebook-f" style="color:#4267B2;"></i>
+                            </div>
+                                @Html.TextBox("DanismanFace",i.DanismanFace,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Instagram </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                    <i class="fa-brands fa-instagram" style="color:#F77737;"></i>
+                            </div>
+                                @Html.TextBox("DanismanInsta",i.DanismanInsta,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Twitter </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                    <i class="fa-brands fa-twitter" style="color:#1DA1F2;"></i>
+                            </div>
+                                @Html.TextBox("DanismanTwitter",i.DanismanTwitter,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Whatsapp </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                    <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
+                            </div>
+                                @Html.TextBox("DanismanWp",i.DanismanWp,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                </div>
+                <div class="cow-kullanici">
+                @foreach (var item in ViewBag.user as List<Aziz_Emlak.Models.kullanici>)
+                {
+                    <h2>Kullanıcı Bilgileri</h2>
+                    <div class="edit">
+                        <h2>Kullanıcı Adı </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                                    @Html.TextBox("Id",item.Id,htmlAttributes:new {@type="hidden"})
+                                    @Html.TextBox("KullaniciAdi",item.KullaniciAdi,htmlAttributes:new {@disabled="true"})
+                            </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Şifre </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                                    @Html.TextBox("Sifre",item.Sifre,htmlAttributes:new {@disabled="true"})
+                        </div>
+                    </div>
+                     <div class="edit-check">
+                        <h2>Fotoğraf : </h2>
+                        <div class="icon">
+                                    @Html.TextBox("DanismanFotgrafi",i.DanismanFotgrafi,htmlAttributes:new{@type="file",@accept="image/*"})
+                        </div>
+                    </div>
+                }   
+                </div>
+                 
+        </div>
+       }
+      
+    </div>
+        <div class="submit">
+            <input type="submit" value="Profili Kaydet">
+        </div>
+
+    }
+</div>

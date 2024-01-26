@@ -1,0 +1,100 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero {
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
+
+    .hero video {
+        width: 100%;
+        height: 99.6%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+.hero-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.login-container {
+    height: 600px;
+    width: 30%;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px #cdad00;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .login-container img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        margin: 1vh 0;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 80%;
+}
+
+input {
+    height: 50px;
+    margin-bottom: 2vh;
+    border: none;
+    border-radius: 5px;
+    padding-left: 1vh;
+    transition: 0.4s ease;
+    font-size: 20px;
+}
+
+    input:hover {
+        box-shadow: 1px 1px 10px #cdad00;
+        border: 1px solid #cdad00;
+    }
+    input:focus {
+        box-shadow: 1px 1px 10px #cdad00;
+        border: 1px solid #cdad00;
+    }
+
+.btn:hover {
+    background-color: #cdad00;
+    cursor: pointer;
+    color: white;
+}
+@media screen and (max-width:1200px)
+{
+	.login-container {
+    	width: 90%;
+		height: 450px;
+		margin-top: 10vh;
+}
+	    .login-container img {
+        width: 200px;
+        height: 200px;
+			
+
+    }
+}

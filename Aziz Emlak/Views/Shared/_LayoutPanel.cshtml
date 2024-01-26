@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="aziz emlak ile ilgili bilgi yazılacak ">
+    <meta name="keyword" content="aziz emlak,emlak,ev,kiralık ev,satılık ev,arsa,kiralık,evimi satmak istiyorum,evimi kiralamak istiyorum,kiralık arsa ">
+    <link rel="stylesheet" href="~/css/Panel/Panellayout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Aziz Emlak Yonetim Paneli</title>
+
+       <script src="~/js/tinymce/tinymce.min.js"></script>
+       <script >   
+           tinymce.init({
+               selector: '#myTextarea',
+               width:1000,        
+           });
+       </script>  
+
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <a href="~/Home/Index">
+                        <img src="~/Media/StaticImage/logo.png" alt="aziz emlak logo">
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <ul class="navbar-links">
+                        <li><a class="nav-link" href="~/Home/Index">ANASAYFA</a></li>
+                        <li><a class="nav-link" href="~/Home/kurumsal">KURUMSAL</a></li>
+                        <li><a class="nav-link" href="~/Home/Portfoyler">PORTFÖYLER</a></li>
+                        <li><a class="nav-link" href="~/Home/Danısmanlar">DANIŞMANLAR</a></li>
+                        <li><a class="nav-link" href="~/Home/Iletisim">İLETİŞİM</a></li>
+                    </ul>
+
+                </div>
+                <div class="burger" onclick="genislet()">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="panel">
+            <a href="~/Home/Index">
+                <img src="~/Media/StaticImage/logo.png" alt="aziz emlak logo">
+            </a>
+            <div class="satir">
+                <li><a class="panela" href="~/Panel/Index"><i class="fa-solid fa-user"></i> PROFİLİM</a></li>
+                <li><a class="panela" href="~/Panel/Portfoylerim"><i class="fa-solid fa-building"></i> PORTFOYLERİM</a></li>
+                <li><a class="panela" href="~/Panel/Danismans"><i class="fa-solid fa-users"></i> DANISMANLAR</a></li>
+                <li><a class="panela" href="~/Panel/Mesajlar"><i class="fa-solid fa-message"></i> MESAJLAR</a></li>
+                <li><a class="panela" href="~/Panel/Ayarlar"><i class="fa-solid fa-gear"></i> AYARLAR</a></li>
+                <li><a class="panela" href="~/Panel/Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cıkış Yap</a></li>
+            </div>
+        </div>
+
+        @RenderBody()
+
+    </div>
+
+    <script src="~/js/AdminMobile.js"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+  
+     
+</body>
+</html>

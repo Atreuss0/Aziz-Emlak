@@ -1,0 +1,767 @@
+﻿
+@model portfoy
+@{
+    ViewData["Title"] = "Portfoy Düzenle";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+
+}
+<link rel="stylesheet" href="~/css/Panel/Portfoyekle.css">
+<div class="content">
+    @using (Html.BeginForm("PortfoyDuzenle", "Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+           <div class="profil-duzenle">
+                <div class="cow-container">
+                    <div class="cow2-container">
+                        <div class="cow2">
+                            <div class="edit">
+                                <h2>Ilce  </h2>
+                                <div class="icon">
+                                    <div class="ico">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <select name="Ilce" required>
+                                        <option selected  value="@Model.Ilce">@Model.Ilce</option>
+                                        <option value="Kepez">Kepez</option>
+                                        <option value="Muratpaşa">Muratpaşa</option>
+                                        <option value="Konyaaltı">KonyaAltı</option>
+                                        <option value="Döşemealtı">DöşemeAltı</option>                                   
+                                        <option value="Aksu">Aksu</option>                                   
+                                        <option value="Akseki">Akseki</option>                                   
+                                        <option value="Alanya">Alanya</option>                                   
+                                        <option value="Elmalı">Elmalı</option>                                   
+                                        <option value="Finike">Finike</option>                                   
+                                        <option value="Gazipaşa">Gazipaşa</option>                                   
+                                        <option value="Gündoğmuş">Gündoğmuş</option>                                   
+                                        <option value="İbradi">İbradı</option>                                   
+                                        <option value="Demre">Demre</option>                                   
+                                        <option value="Kaş">Kaş</option>                                   
+                                        <option value="Korkuteli">Korkuteli</option>                                   
+                                        <option value="Kumluca">Kumluca</option>                                   
+                                        <option value="Manavgat">Manavgat</option>                                   
+                                        <option value="Serik">Serik</option>                                                                    
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="edit">
+                                <h2>Mahalle </h2>
+                                <div class="icon">
+                                    <div class="ico">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                @Html.TextBox("Mahalle",Model.Mahalle,htmlAttributes:new{@required="true"})
+                                </div>
+                            </div>
+                            <div class="edit">
+                                <h2>Portfoy Tipi </h2>
+                                <div class="icon">
+                                    <div class="ico">
+                                        <i class="fa-solid fa-list-check"></i>
+                                    </div>
+                                    <select name="PortfoyTipi" required>
+                                        <option selected  value="@Model.PortfoyTipi">@Model.PortfoyTipi</option>
+                                        <option value="Konut">Konut</option>
+                                        <option value="Arsa-arazi">Arsa-arazi</option>
+                                        <option value="İş yeri">İş Yeri</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="edit">
+                                <h2>Konut Tipi </h2>
+                                <div class="icon">
+                                    <div class="ico">
+                                        <i class="fa-solid fa-house"></i>
+                                    </div>
+                                      <select name="KonutTipi" required>
+                                        <option selected value="@Model.KonutTipi">@Model.KonutTipi</option>
+                                        <option value="Daire">Daire</option>
+                                        <option value="Mustakil">Mustakil </option>
+                                        <option value="Dağ Evi">Dağ evi</option>
+                                        <option value="Konak">Konak</option>
+                                        <option value="Villa">Villa</option>
+                                        <option value="Yazlık">Yazlık</option>
+                                        <option value="Yalı">Yalı</option>
+                                        <option value="Köy Evi">Koy evi</option>
+                                        <option value="Rezidans">Rezidans</option>
+                                        <option value="Prefabrik">Prefabrik</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="edit">
+                                <h2>Durumu </h2>
+                                <div class="icon">
+                                    <div class="ico">
+                                        <i class="fa-solid fa-sack-dollar"></i>
+                                    </div>
+                                    <select name="Durumu" required>
+                                        <option selected  value="@Model.Durumu">@Model.Durumu</option>
+                                        <option value="Kiralık">Kiralık</option>
+                                        <option value="Satılık">Satılık</option>
+                                        <option value="Devren Kiralık">Devren Kiralık</option>
+                                        <option value="Devren Satılık">Devren Satılık</option>
+                                    </select>                              
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cow2">
+                                <div class="edit">
+                                    <h2>m²(Bürüt) </h2>
+                                    <div class="icon">
+                                        <div class="ico">
+                                            <i class="fa-solid fa-square"></i>
+                                        </div>
+                                    @Html.TextBox("Mburut",Model.Mburut,htmlAttributes:new{@required="true"})
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <h2>m²(Net) </h2>
+                                    <div class="icon">
+                                        <div class="ico">
+                                            <i class="fa-regular fa-square"></i>
+                                        </div>
+                                @Html.TextBox("Mnet",Model.Mnet,htmlAttributes:new{@required="true"})
+                                    </div>
+                                </div> 
+                                <div class="edit">
+                                    <h2>Bina Yaşı </h2>
+                                    <div class="icon">
+                                        <div class="ico">
+                                            <i class="fa-solid fa-building-circle-exclamation"></i>
+                                        </div>
+                                @Html.TextBox("BinaYasi",Model.BinaYasi,htmlAttributes:new{@required="true"})
+                                    </div>
+                                </div>                                   
+                                <div class="edit">
+                                    <h2>Kat Sayısı </h2>
+                                    <div class="icon">
+                                        <div class="ico">
+                                            <i class="fa-solid fa-building-circle-exclamation"></i>
+                                        </div>
+                                @Html.TextBox("KatSayısı",Model.KatSayısı,htmlAttributes:new{@required="true"})
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <h2>Bulunduğu Kat </h2>
+                                    <div class="icon">
+                                        <div class="ico">
+                                            <i class="fa-solid fa-building-circle-exclamation"></i>
+                                        </div>
+                                @Html.TextBox("BulunduguKat",Model.BulunduguKat,htmlAttributes:new{@required="true"})
+                                    </div>
+                                </div>                           
+                        </div>
+                    </div>
+                    <div class="aciklama-container">
+                        <div class="edit">
+                            <h2>Başlık </h2>
+                            <div class="icon">
+                                 @Html.TextArea("Baslik",Model.Baslik,htmlAttributes:new{@required="true"})
+                            </div>
+                        </div>
+                        <div class="edit">
+                            <h2>Acıklama </h2>
+                            <div class="icon">
+                            @Html.TextArea("KısaAciklama",Model.KısaAciklama,htmlAttributes:new{@required="true",@id="myTextarea"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cow">            
+                    <div class="edit">
+                        <h2>Oda Sayısı </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-person-shelter"></i>
+                            </div>
+                        @Html.TextBox("OdaSayısı",Model.OdaSayısı,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Banyo Sayısı </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-bath"></i>
+                            </div>
+                        @Html.TextBox("BanyoSayısı",Model.BanyoSayısı,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Isıtma </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-brands fa-hotjar"></i>
+                            </div>
+                        @Html.TextBox("Isıtma",Model.Isıtma,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Aidat </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-building-circle-exclamation"></i>
+                            </div>
+                        @Html.TextBox("Aidat",Model.Aidat,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <h2>Fiyatı </h2>
+                        <div class="icon">
+                            <div class="ico">
+                                <i class="fa-solid fa-house-circle-exclamation"></i>
+                            </div>
+                        @Html.TextBox("Fiyati",Model.Fiyati,htmlAttributes:new{@required="true"})
+                        </div>
+                    </div>
+
+                    <div class="check-container">
+                        <div class="ozellik">
+                        @Html.CheckBox("SiteIcerisinde",Model.SiteIcerisinde,htmlAttributes:new{@type="checkbox",@id="site"})
+                            <label for="site">Site icerisinde</label>                       
+                        @Html.TextBox("IlanTarihi",DateTime.Now,htmlAttributes:new {@type="hidden"})                      
+                        </div>
+                        <div class="ozellik">
+                        @Html.CheckBox("Esyalı",Model.Esyalı,htmlAttributes:new{@type="checkbox",@id="esya"})
+                            <label for="esya"> Esyalı</label> 
+                        </div>
+                    </div>                
+                    <div class="ımageedit">
+                        <a href="~/Panel/ImageEdit/@Model.id" >
+                             <div class="imagebtn">
+                                Fotoğraflari Düzenleyin
+                             </div>   
+                        </a>                           
+                    </div>
+                    <div class="ozellik" >
+                    @Html.CheckBox("Onay",Model.Onay,htmlAttributes:new{@type="checkbox",@id="onay" })
+                        <label for="onay">Onay</label>                 
+                    </div>
+                    
+
+                </div>      
+            </div>
+            <div class="cephe">
+                <div class="cephe-ozelikleri">
+                    <h2>Cephe </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("Kuzey",Model.Kuzey,htmlAttributes:new{@type="checkbox",@id="label"})
+                                <label for="label">
+                                    Kuzey  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Guney",Model.Guney,htmlAttributes:new{@type="checkbox",@id="label1"})
+                                <label for="label1">
+                                    Güney  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Dogu",Model.Dogu,htmlAttributes:new{@type="checkbox",@id="label2"})
+                                <label for="label2">
+                                    Doğu   
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Bati",Model.Bati,htmlAttributes:new{@type="checkbox",@id="label3"})
+                                <label for="label3">
+                                    Batı   
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cephe-ozelikleri">
+                    <h2>İc Özellikler </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("ADSL",Model.ADSL,htmlAttributes:new{@type="checkbox",@id="label4"})
+                                <label for="label4">
+                                    ADSL  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("AkiliEv",Model.AkiliEv,htmlAttributes:new{@type="checkbox",@id="label5"})
+                                <label for="label5">
+                                    Akılı Ev  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Alarm",Model.Alarm,htmlAttributes:new{@type="checkbox",@id="label6"})
+                                <label for="label6">
+                                    Alarm  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("AlaturkaTuvalet",Model.AlaturkaTuvalet,htmlAttributes:new{@type="checkbox",@id="label7"})
+                                <label for="label7">
+                                    Alaturka Tuvalet  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("AmerikanMutfak",Model.AmerikanMutfak,htmlAttributes:new{@type="checkbox",@id="label8"})
+                                <label for="label8">
+                                    Amerikan Mutfak 
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("CelikKapi",Model.CelikKapi,htmlAttributes:new{@type="checkbox",@id="label9"})
+                                <label for="label9">
+                                    Çelik Kapı  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("DusaKabin",Model.DusaKabin,htmlAttributes:new{@type="checkbox",@id="label10"})
+                                <label for="label10">
+                                    Duşa Kabin 
+                                </label>
+                            </div>                       
+                        </div>
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("EbeveynBanyosu",Model.EbeveynBanyosu,htmlAttributes:new{@type="checkbox",@id="label11"})
+                                <label for="label11">
+                                    Ebeveyn Banyosu 
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("IsiCam",Model.IsiCam,htmlAttributes:new{@type="checkbox",@id="label12"})
+                                <label for="label12">
+                                    Isı Cam  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Diafon",Model.Diafon,htmlAttributes:new{@type="checkbox",@id="label13"})
+                                <label for="label13">
+                                    Görüntülü Diafon  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Kuvet",Model.Kuvet,htmlAttributes:new{@type="checkbox",@id="label14"})
+                                <label for="label14">
+                                    Küvet 
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("KartonpiyerTavan",Model.KartonpiyerTavan,htmlAttributes:new{@type="checkbox",@id="label15"})
+                                <label for="label15">
+                                    Kartonpiyer Tavan  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Teras",Model.Teras,htmlAttributes:new{@type="checkbox",@id="label16"})
+                                <label for="label16">
+                                    Teras  
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Kiler",Model.Teras,htmlAttributes:new{@type="checkbox",@id="label17"})
+                                <label for="label17">
+                                    Kiler  
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cephe-ozelikleri">
+                    <h2>Dış Özellikler </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("SesYalıtımı",Model.SesYalıtımı,htmlAttributes:new{@type="checkbox",@id="label18"})
+                                <label for="label18">
+                                    Ses Yalıtımı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("IsıYalıtımı",Model.IsıYalıtımı,htmlAttributes:new{@type="checkbox",@id="label19"})
+                                <label for="label19">
+                                    Isı Yalıtımı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Jenerator",Model.Jenerator,htmlAttributes:new{@type="checkbox",@id="label20"})
+                                <label for="label20">
+                                    Jeneratör
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("KameraSistemi",Model.KameraSistemi,htmlAttributes:new{@type="checkbox",@id="label21"})
+                                <label for="label21">
+                                    Kamera sistemi
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Kapici",Model.Kapici,htmlAttributes:new{@type="checkbox",@id="label22"})
+                                <label for="label22">
+                                    Kapıcı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("OtoparkAcık",Model.OtoparkAcık,htmlAttributes:new{@type="checkbox",@id="label23"})
+                                <label for="label23">
+                                    Otapark-Acık
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("OtoparkKapalı",Model.OtoparkKapalı,htmlAttributes:new{@type="checkbox",@id="label24"})
+                                <label for="label24">
+                                    Otopark-kapalı
+                                </label>
+                            </div>
+                        </div>
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("KabloTv",Model.KabloTv,htmlAttributes:new{@type="checkbox",@id="label25"})
+                                <label for="label25">
+                                    Kablo Tv
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("SporAlanı",Model.SporAlanı,htmlAttributes:new{@type="checkbox",@id="label26"})
+                                <label for="label26">
+                                    Spor Alanı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("SuDeposu",Model.SuDeposu,htmlAttributes:new{@type="checkbox",@id="label27"})
+                                <label for="label27">
+                                    Su Deposu
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("YanginMerdiveni",Model.YanginMerdiveni,htmlAttributes:new{@type="checkbox",@id="label28"})
+                                <label for="label28">
+                                    Yangın Merdiveni
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("YüzmeHavuzuAcik",Model.YüzmeHavuzuAcik,htmlAttributes:new{@type="checkbox",@id="label29"})
+                                <label for="label29">
+                                    Yüzme Havuzu-acık
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("YüzmeHavuzuKapalı",Model.YüzmeHavuzuKapalı,htmlAttributes:new{@type="checkbox",@id="label30"})
+                                <label for="label30">
+                                    Yüzme Havuzu-Kapalı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Asansor",Model.Asansor,htmlAttributes:new{@type="checkbox",@id="label31"})
+                                <label for="label31">
+                                    Asansör
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cephe-ozelikleri">
+                    <h2>Muhit </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("AlısverisMerkezi",Model.AlısverisMerkezi,htmlAttributes:new{@type="checkbox",@id="label32"})
+                                <label for="label32">
+                                    Alışveriş Merkezi
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Camii",Model.Camii,htmlAttributes:new{@type="checkbox",@id="label33"})
+                                <label for="label33">
+                                    Camii
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Belediye",Model.Belediye,htmlAttributes:new{@type="checkbox",@id="label34"})
+                                <label for="label34">
+                                    Belediye
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("DenizeSifir",Model.DenizeSifir,htmlAttributes:new{@type="checkbox",@id="label35"})
+                                <label for="label35">
+                                    Denize Sıfır
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Eczane",Model.Eczane,htmlAttributes:new{@type="checkbox",@id="label36"})
+                                <label for="label36">
+                                    Eczane
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Hastane",Model.Hastane,htmlAttributes:new{@type="checkbox",@id="label37"})
+                                <label for="label37">
+                                    Hastane
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("İlkOkul",Model.İlkOkul,htmlAttributes:new{@type="checkbox",@id="label38"})
+                                <label for="label38">
+                                    İlk Okul
+                                </label>
+                            </div>
+                        </div>
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("OrtaOkul",Model.OrtaOkul,htmlAttributes:new{@type="checkbox",@id="label39"})
+                                <label for="label39">
+                                    Orta Okul
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Lise",Model.Lise,htmlAttributes:new{@type="checkbox",@id="label40"})
+                                <label for="label40">
+                                    Lise
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Universite",Model.Universite,htmlAttributes:new{@type="checkbox",@id="label41"})
+                                <label for="label41">
+                                    Üniversite
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Park",Model.Park,htmlAttributes:new{@type="checkbox",@id="label42"})
+                                <label for="label42">
+                                    Park
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("SaglikOcagi",Model.SaglikOcagi,htmlAttributes:new{@type="checkbox",@id="label43"})
+                                <label for="label43">
+                                    Sağlık Ocağı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("İtfaye",Model.İtfaye,htmlAttributes:new{@type="checkbox",@id="label44"})
+                                <label for="label44">
+                                    İtfaye
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("SehirMerkezi",Model.SehirMerkezi,htmlAttributes:new{@type="checkbox",@id="label45"})
+                                <label for="label45">
+                                    Şehir Merkezi
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cephe-ozelikleri">
+                    <h2>Ulaşım </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("AnaYol",Model.AnaYol,htmlAttributes:new{@type="checkbox",@id="label46"})
+                                <label for="label46">
+                                    Ana Yol
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Cadde",Model.Cadde,htmlAttributes:new{@type="checkbox",@id="label47"})
+                                <label for="label47">
+                                    Cadde
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Dolmus",Model.Dolmus,htmlAttributes:new{@type="checkbox",@id="label48"})
+                                <label for="label48">
+                                    Dolmuş
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("E5",Model.E5,htmlAttributes:new{@type="checkbox",@id="label482"})
+                                <label for="label482">
+                                   E5
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Havaalanı",Model.Havaalanı,htmlAttributes:new{@type="checkbox",@id="label49"})
+                                <label for="label49">
+                                    Havaalanı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Metrobus",Model.Metrobus,htmlAttributes:new{@type="checkbox",@id="label50"})
+                                <label for="label50">
+                                    Metrobüs
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("OtobusDuragı",Model.OtobusDuragı,htmlAttributes:new{@type="checkbox",@id="label51"})
+                                <label for="label51">
+                                    Otobus Durağı
+                                </label>
+                            </div>
+                        </div>
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("Tramvay",Model.Tramvay,htmlAttributes:new{@type="checkbox",@id="label52"})
+                                <label for="label52">
+                                    Tramvay
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("TEM",Model.TEM,htmlAttributes:new{@type="checkbox",@id="label53"})
+                                <label for="label53">
+                                    TEM
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Metro",Model.Metro,htmlAttributes:new{@type="checkbox",@id="label54"})
+                                <label for="label54">
+                                    Metro
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cephe-ozelikleri">
+                    <h2>Manzara </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("Deniz",Model.Deniz,htmlAttributes:new{@type="checkbox",@id="label55"})
+                                <label for="label55">
+                                    Deniz
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Doga",Model.Doga,htmlAttributes:new{@type="checkbox",@id="label56"})
+                                <label for="label56">
+                                    Doğa
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Sehir",Model.Sehir,htmlAttributes:new{@type="checkbox",@id="label57"})
+                                <label for="label57">
+                                    Şehir
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("ParkYesilAlan",Model.ParkYesilAlan,htmlAttributes:new{@type="checkbox",@id="label58"})
+                                <label for="label58">
+                                    Park/Yeşil Alan
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Gol",Model.Gol,htmlAttributes:new{@type="checkbox",@id="label59"})
+                                <label for="label59">
+                                    Göl
+                                </label>
+                            </div>             
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cephe-ozelikleri">
+                    <h2>Konut tipi </h2>
+                    <hr>
+                    <div class="ozellikler">
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("AraKat",Model.AraKat,htmlAttributes:new{@type="checkbox",@id="label60"})
+                                <label for="label60">
+                                    Ara Kat
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("AraKatDublex",Model.AraKatDublex,htmlAttributes:new{@type="checkbox",@id="label61"})
+                                <label for="label61">
+                                    Ara Kat Dublex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("BahceDublex",Model.BahceDublex,htmlAttributes:new{@type="checkbox",@id="label62"})
+                                <label for="label62">
+                                    Bahçe Dublex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Bahceli",Model.Bahceli,htmlAttributes:new{@type="checkbox",@id="label63"})
+                                <label for="label63">
+                                    Bahçeli
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("CatıDublex",Model.CatıDublex,htmlAttributes:new{@type="checkbox",@id="label64"})
+                                <label for="label64">
+                                   Catı Dublex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Forlex",Model.Forlex,htmlAttributes:new{@type="checkbox",@id="label65"})
+                                <label for="label65">
+                                    Forlex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("DukkanUstu",Model.DukkanUstu,htmlAttributes:new{@type="checkbox",@id="label66"})
+                                <label for="label66">
+                                    Dükkan Üstü
+                                </label>
+                            </div>
+                        </div>
+                        <div class="ozellikler-row">
+                            <div class="ozellik">
+                            @Html.CheckBox("GirisKatı",Model.GirisKatı,htmlAttributes:new{@type="checkbox",@id="label67"})
+                                <label for="label67">
+                                    Girş Katı
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("TersDublex",Model.TersDublex,htmlAttributes:new{@type="checkbox",@id="label68"})
+                                <label for="label68">
+                                    Ters Dublex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Dublex",Model.Dublex,htmlAttributes:new{@type="checkbox",@id="label69"})
+                                <label for="label69">
+                                    Dublex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Triplex",Model.Triplex,htmlAttributes:new{@type="checkbox",@id="label70"})
+                                <label for="label70">
+                                    Triplex
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("Mustakil",Model.Mustakil,htmlAttributes:new{@type="checkbox",@id="label71"})
+                                <label for="label71">
+                                    Müstakil 
+                                </label>
+                            </div>
+                            <div class="ozellik">
+                            @Html.CheckBox("ZeminKat",Model.ZeminKat,htmlAttributes:new{@type="checkbox",@id="label72"})
+                                <label for="label72">
+                                    Zemin kat
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Pörtföyü Kaydet">
+            </div>
+        
+    }
+</div>
+
+

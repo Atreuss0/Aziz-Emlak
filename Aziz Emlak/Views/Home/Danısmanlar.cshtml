@@ -1,0 +1,99 @@
+﻿
+@model List<danisman>
+@{
+    ViewData["Title"] = "Danısmanlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/danısmanlar.css">
+<div class="hero">
+    <img src="~/Media/StaticImage/azizz_Moment.jpg" alt="">
+    <div><h1>DANIŞMANLARIMIZ</h1></div>
+</div>
+<div class="container">
+
+    <div class="danismanlar-container">
+        <h2>Broker</h2>
+        <hr>
+        <div class="brokerler">
+            @foreach (var i in Model)
+            {
+                @if (i.Role == "Broker")
+                {
+                    <a href="~/Home/Profil/@i.id">
+                        <div class="danisman">
+                            <img src="/Media/img/@i.DanismanFotgrafi" alt="azizemlak Antalya ">
+                            <h3>@i.DanismanAdi</h3>
+                            <i class="fa-solid fa-phone"><span>@i.DanismanGsm</span></i>
+                            <i class="fa-solid fa-envelope"><span>@i.DanismanEmail</span></i>
+                            <div class="danisman-icon">
+                                <a href="@i.DanismanFace"><i id="facee" class="fa-brands fa-facebook-f"></i></a>
+                                <a href="@i.DanismanInsta"><i id="instaa" class="fa-brands fa-instagram"></i></a>
+                                <a href="@i.DanismanTwitter"><i id="twitterr" class="fa-brands fa-twitter"></i></a>
+                                <a href="@i.DanismanWp"><i id="wp" class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                }
+
+            }
+            
+        </div>
+        <h2>Ofis Çalışanları</h2>
+        <hr>
+        <div class="danismanlar">
+            @foreach (var i in Model)
+            {
+                @if (i.Role == "Ofis")
+                {
+                    <a href="~/Home/Profil/@i.id">
+                        <div class="danisman">
+                            <img src="/Media/img/@i.DanismanFotgrafi" alt="azizemlak Antalya">
+                            <h3>@i.DanismanAdi</h3>
+                            <i class="fa-solid fa-phone"><span>@i.DanismanGsm</span></i>
+                            <i class="fa-solid fa-envelope"><span>@i.DanismanEmail</span></i>
+                            <div class="danisman-icon">
+                                <a href="@i.DanismanFace"><i id="facee" class="fa-brands fa-facebook-f"></i></a>
+                                <a href="@i.DanismanInsta"><i id="instaa" class="fa-brands fa-instagram"></i></a>
+                                <a href="@i.DanismanTwitter"><i id="twitterr" class="fa-brands fa-twitter"></i></a>
+                                <a href="@i.DanismanWp"><i id="wp" class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                }
+
+            }
+
+        </div>
+        <h2>Gayrimenkul Danışmaları</h2>
+        <hr>
+        <div class="danismanlar">
+            @foreach (var i in Model)
+            {
+                @if(i.Role=="Danışman")
+                {
+                    <a href="~/Home/Profil/@i.id">
+                        <div class="danisman">
+                            <img src="/Media/img/@i.DanismanFotgrafi" alt="azizemlak Antalya">
+                            <h3>@i.DanismanAdi</h3>
+                            <i class="fa-solid fa-phone"><span>@i.DanismanGsm</span></i>
+                            <i class="fa-solid fa-envelope"><span>@i.DanismanEmail</span></i>
+                            <div class="danisman-icon">
+                                <a href="@i.DanismanFace"><i id="facee" class="fa-brands fa-facebook-f"></i></a>
+                                <a href="@i.DanismanInsta"><i id="instaa" class="fa-brands fa-instagram"></i></a>
+                                <a href="@i.DanismanTwitter"><i id="twitterr" class="fa-brands fa-twitter"></i></a>
+                                <a href="@i.DanismanWp"><i id="wp" class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                }
+               
+            }
+       
+        </div>
+        <div class="danismanlar">
+           <button class="btn btn-success"></button>
+         
+        </div>
+    </div>
+</div>
+

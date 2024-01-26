@@ -1,0 +1,66 @@
+﻿@model IPagedList<portfoy>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+<link rel="stylesheet" href="~/css/Panel/Portfoylerim.css">
+<div class="content">
+    <div class="head">
+        <h1>PÖRTFÖYLERİM</h1>
+        <a href="Portfoyekle">
+            <button><i class="fa-solid fa-house"></i>Portföy Ekle</button>
+        </a>
+    </div>
+
+    <hr>
+    <div class="Portfoyler">
+        @foreach (var i in Model)
+        {
+        <div class="contain">
+           <div class="edit">
+                 <a href="~/Panel/PortfoyDuzenle/@i.id"><i class="fa-solid fa-file-pen"></i></a>
+                 <a href="~/Panel/PortfoySil/@i.id"><i class="fa-solid fa-trash"></i></a>
+           </div>
+           <a href="~/Home/Portfoy/@i.id">
+                <div class="portfoy">
+                    <div>
+                            <img src="~/Media/img/@i.Image" alt="">
+                    </div>                  
+                    <div class="portfoy-bilgi">
+                        <div class="poetfoy-yazi">
+                                @if (i.Baslik.Length <= 75)
+                                {
+                                        <h3>@i.Baslik</h3>
+                                }
+                                else
+                                {
+                                        <h3>@i.Baslik.Substring(0,i.Baslik.Substring(0,75).LastIndexOf(" "))...</h3>
+                                }
+                                <div class="portfoy-date">
+                                    <h4>@i.Durumu|@i.PortfoyTipi</h4>
+                                    <i class="fa-solid fa-calendar-days"><span>@(((DateTime)i.IlanTarihi).ToString("dd.MM.yyyy"))</span></i>
+                                </div>
+                        </div>
+                        <div class="portfoy-fiyat">
+                            <hr>
+                            <div class="portfoy-icon">
+                                    <h2>@i.Fiyati.ToString("c0")</h2>
+                                <div class="p-icon">
+                                    <i class="fa-solid fa-couch"><span>@i.OdaSayısı</span></i>
+                                    <i class="fa-solid fa-layer-group"><span>@i.BulunduguKat . Kat</span></i>
+                                    <i class="fa-solid fa-square"><span>@i.Mburut m²</span></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+          
+        </div>
+        }
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Portfoylerim",new {page}))
+     
+
+    </div>
+</div>
+

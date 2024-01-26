@@ -1,0 +1,51 @@
+﻿@model List<Resim>
+@{
+    ViewData["Title"] = "Portfoy Düzenle";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+
+}
+<link rel="stylesheet" href="~/css/Panel/Imageedit.css">
+<div class="content">
+    @using (Html.BeginForm("ImageEdit", "Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="head">
+            <h1>Fotoğraflar</h1>
+       
+                <label class="imgplus">
+                    <div><i class="fa-solid fa-image"></i> Fotoğraf Ekle</div>
+                    @Html.TextBox("Name",null,htmlAttributes:new{@type="file",@accept="image/*"})
+                </label> 
+                 <label class="imgplus">
+                    <div><i class="fa-solid fa-images"></i> Kapak Fotoğrafı </div>
+                    @Html.TextBox("Image",null,htmlAttributes:new{@type="file",@accept="image/*"})
+                </label>
+                  <label class="imgplus-submit">
+                    <div>Kaydet</div>
+                    <input type="submit" >
+                </label>
+       
+        </div>
+    }
+    <hr>
+    <div class="foto-container">
+            <div class="foto">
+                <div >
+                    <h3>Kapak Fotoğrafı</h3>
+                </div>
+                <div class="kapak-img">
+                    <img src="~/Media/img/@ViewBag.image">
+                </div>              
+            </div>
+            @foreach (var i in Model)
+            {                       
+                <div class="foto">
+                    <div class="edit">
+                        <a href="~/Panel/ImageDelete/@i.id"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                    <div class="kapak-img">
+                        <img src="~/Media/img/@i.Name">
+                    </div>
+                </div>
+            }       
+    </div>
+</div>

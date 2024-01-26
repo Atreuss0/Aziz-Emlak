@@ -1,0 +1,482 @@
+﻿.container {
+    height: 100%;
+    background-color: #d2d2d2;
+    margin-top: 10vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 3vh;
+}
+
+.danisman-bilgileri {
+    width: 75%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+    display: flex;
+
+}
+
+.danisman {
+    height: 100%;
+    width: 400px;
+    height:550px;
+    margin-right: 2vh;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+}
+
+    .danisman img {
+        object-fit: cover;
+        width: 100%;
+        height: 350px;
+        bottom: -10px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px black;
+    }
+
+    .danisman h1 {
+        letter-spacing: 1px;
+        font-weight: 400;
+        margin: 0.8vh 0;
+        padding-left: 1.5vh;
+    }
+
+    .danisman i {
+        color: #323031b3;
+        margin: 0.3vh 0;
+        padding-left: 1.5vh;
+        margin: 1vh 0;
+        font-size: 22px;
+    }
+
+.danisman i span {
+    margin-left: 1vh;
+    font-size: 18px;
+}
+
+.danisman-icon {
+    display: flex;
+    align-items: center;
+    margin:10px 0;
+    font-size: 32px;
+    height: 50px;
+}
+
+    .danisman-icon i {
+        margin-right: 30px;
+        font-size: 35px;
+		transition:all 0.5s ease;
+    }
+
+.danisman-hakkinda {
+    height: 550px;
+    width: 120vh;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.kisabilgi {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+}
+
+.tecrube {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    background-color: #cdad00;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin: 0 2vh;
+    font-size: 20px;
+    color: white;
+}
+
+.toplam-portfoy {
+    height: 40px;
+    width: 130px;
+    color: white;
+    text-align: center;
+    background-color: #cdad00;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin: 0 2vh;
+    font-size: 20px;
+}
+
+.danisman-aciklama {
+    padding: 1vh;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+    .danisman-aciklama hr {
+        margin: 1vh 0;
+    }
+
+.h2 {
+    text-align: center;
+    margin: 2vh 0;
+    font-size: 30px;
+}
+
+.portfoyler-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 140vh;
+    display: flex;
+    position:relative;  
+    background-color:white;
+    padding:4vh;
+    border-radius:10px;
+}
+
+.filtre {
+    background-color: #4b4b4b;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black;
+    height: 65vh;
+    padding: 2vh 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+    .filtre h4 {
+        margin-top: 1.5vh;
+        margin-bottom: 0.5vh;
+        color: white;
+    }
+
+.portfoyler {
+    flex: 4;
+    padding: 0 3vh;
+    overflow-y: scroll;
+    position: relative;
+    padding-top:1vh;
+}
+    .portfoyler::-webkit-scrollbar {
+        background-color: transparent;
+        width: 0.6vw;
+    }
+    .portfoyler::-webkit-scrollbar-thumb {
+        background-color: #d2d2d2;
+        border-radius:20px;
+ 
+    }
+.select {
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 5vh;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+    .select select {
+        appearance: none;
+        border: 0 !important;
+        cursor: pointer;
+        font-size: 18px;
+        flex: 1;
+        padding-left: 1vh;
+        padding-right: 1vh;
+        color: #373737c7;
+    }
+
+    .select:hover {
+        box-shadow: 1px 1px 10px white;
+    }
+
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        right: 0;
+        top: 0.5vh;
+        padding: 1.1vh;
+        cursor: pointer;
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.5 ease;
+        color: #818181dd;
+    }
+
+    .select:hover::after {
+        color: black;
+    }
+
+option {
+    color: #1d1b1b;
+}
+
+.filtre a {
+    width: 80%;
+    height: 5vh;
+    background-color: rgb(191, 18, 67);
+    border-radius: 5px;
+    text-align: center;
+    padding: 0.7vh;
+    color: white;
+    font-size: 20px;
+    border: 1px solid rgb(191, 18, 67);
+}
+
+    .filtre a:hover {
+        box-shadow: 1px 1px 15px rgb(191, 18, 67);
+        background-color: white;
+        color: rgb(191, 18, 67);
+    }
+
+.filtre-yazi {
+    text-align: left;
+    width: 20vh;
+}
+
+.portfoy {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    margin-bottom: 3vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px black;
+    transition: 0.3s ease;
+}
+
+    .portfoy img {
+        height: 20vh;
+        width: 30vh;
+        object-fit: contain;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+.portfoy-bilgi {
+    padding-top: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portfoy h3 {
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 3vh;
+    height: 6vh;
+    position: relative;
+    overflow: hidden;
+    font-weight:bold;
+}
+
+.portfoy-date {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5vh;
+    color: #4b4b4b;
+}
+
+    .portfoy-date i {
+        font-size: 16px;
+    }
+
+        .portfoy-date i span {
+            margin-left: 0.5vh;
+            letter-spacing: 1px;
+        }
+
+.portfoy h4 {
+    letter-spacing: 1px;
+    color: #4b4b4b;
+}
+
+.portfoy-fiyat {
+    margin-bottom: 1vh
+}
+
+.portfoy-icon {
+    margin-top: 0.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portfoy-fiyat h2 {
+    color: rgb(191, 18, 67);
+    letter-spacing: 1px;
+}
+
+    .portfoy-fiyat h2 i {
+        margin-right: 2vh;
+        color: #4b4b4ba9;
+    }
+
+.portfoy-fiyat i span {
+    margin-left: 0.5vh;
+}
+
+.portfoy hr {
+    opacity: 0.5;
+}
+
+.p-icon i {
+    margin-left: 0.5vw;
+    color: #4b4b4ba9;
+}
+
+.portfoy:hover {
+    box-shadow: 1px 1px 15px black;
+}
+
+
+#facee:hover {
+    color: #4267B2;
+	transform:scale(1.2);
+}
+
+#instaa:hover {
+    color: #F56040;
+	transform:scale(1.2);
+}
+
+#twitterr:hover {
+    color: #1DA1F2;
+	transform:scale(1.2);
+}
+#wp:hover {
+	color: #25D366;
+	transform:scale(1.2);
+}
+
+
+@media screen and (max-width:1100px) 
+{
+    .danisman-bilgileri{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:100%;
+    }
+    .danisman {
+        margin-top:3vh;
+        margin-bottom: 3vh;
+        margin-right: 0;
+        width:95%;
+        height:550px;
+    }
+    .danisman-hakkinda{
+        width:95%;
+       
+    }
+    .danisman img {
+        height: 350px;
+    }
+
+    .container{
+        padding:20px 5px;
+    }
+    .portfoyler-container {
+        width: 100%;
+        padding:2.1vh;
+    }
+
+    .portfoyler a {
+        margin-bottom: 3vh;
+    }
+
+    .portfoy {
+        display: flex;
+        flex-direction: column;
+        height: 390px;
+        width: 375px;
+    }
+
+        .portfoy img {
+            width: 100%;
+            height: 220px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0;
+        }
+
+    .portfoyler {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .portfoy-bilgi {
+        width: 100%;
+    }
+
+    .portfoy-fiyat {
+        font-size: 13px;
+    }
+
+
+    .container {
+        border-radius: 0;
+    }
+  
+
+   
+}
+
+@media screen and (max-width:1400px) {
+    
+   
+    .danisman i span {
+    margin-left: 1vh;
+    font-size: 14px;
+	}
+}
+@media screen and (max-width:860px) {
+    
+	.danisman i span {
+	 	margin-left: 1vh;
+   	 	font-size: 18px;
+	}
+	.danisman i  {
+	 	margin-bottom:10px;
+
+	}
+	.danisman i[class="fa-solid fa-phone"]  {
+
+		color:#008000;
+	}
+   
+    .container {
+        border-radius: 0;
+    }
+	#facee {
+    color: #4267B2;
+	}
+
+	#instaa {
+		color: #F56040;
+	}
+
+	#twitterr {
+		color: #1DA1F2;
+	}
+		#wp {
+		color: #25D366;
+	}
+}

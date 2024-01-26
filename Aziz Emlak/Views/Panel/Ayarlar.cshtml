@@ -1,0 +1,47 @@
+﻿@model List<kullanici>
+@{
+    ViewData["Title"] = "Ayarlar";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+<link rel="stylesheet" href="~/css/Panel/Ayarlar.css">
+<div class="content">
+    <div class="head">
+        <h1>Ayarlar</h1>  
+    </div>
+    <hr>
+    @using (Html.BeginForm("Ayarlar", "Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @foreach (var i in Model)
+        {
+            <div class="ayarlar-container">
+                <div class="ayarlar">
+                    <h2>Profil Ayarları</h2>
+                    <div class="box">
+                        <h3>Kullanıcı Adı</h3>
+                        <div class="input">
+                            <div class="icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>                         
+                            @Html.TextBox("KullaniciAdi",i.KullaniciAdi)
+                            @Html.Hidden("danismanid",i.danismanid)
+                            @Html.Hidden("Id",i.Id)                           
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3>Şifre</h3>
+                        <div class="input">
+                            <div class="icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            @Html.Password("sifre",i.Sifre)
+                        </div>
+                    </div>
+                    <div class="submit">
+                            <input type="submit" value="Değişiklikleri Kaydet">                 
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>

@@ -1,0 +1,395 @@
+﻿.content {
+    height: 90vh;
+    width: 90%;
+    margin-left: 210px;
+    padding: 2vh;
+	position : relative;
+    overflow-y: auto;
+	overflow-x: hidden;
+	 
+}
+
+.contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1.5vw;
+    
+}
+
+.profil-duzenle {
+    display: flex;
+    margin-top: 3vh;
+
+}
+.cow-container{
+    display:flex;
+    flex-direction:column;
+}
+.cow2-container{
+    display:flex;
+}
+.aciklama-container {
+    border-radius: 15px;
+    background-color: white;
+    margin-top:2vh;
+    width: 56.5vw;
+    align-items: center;
+    padding: 2vh 1vw 2vw 2vw;
+    text-align: center;
+}
+.cow {
+    border-radius: 15px;
+    background-color: white;
+    width: 26vw;
+    align-items: center;
+    padding: 2vh 1vw 2vw 2vw;
+    text-align: center;
+}
+.cow2 {
+    border-radius: 15px;
+    background-color: white;
+    width: 27vw;
+    align-items: center;
+    padding: 2vh 1vw 2vw 2vw;
+    text-align: center;
+    margin-right: 2.5vw;
+    height:52vh;
+}
+
+select {
+    appearance: none;
+    height: 5vh;
+    width: 19vw;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0px 0px 3px gray inset;
+    font-size: 22px;
+    padding: 0.5vw;
+}
+
+option {
+    border: none;
+    box-shadow: 0px 0px 3px gray inset;
+    padding: 0.5vw;
+}
+
+select:hover {
+    box-shadow: 0px 0px 6px black inset;
+}
+
+select:focus {
+    box-shadow: 0px 0px 6px black inset;
+}
+.edit {
+    text-align: left;
+    margin: 1vh;
+}
+
+    .edit h2 {
+        font-weight: 400;
+    }
+
+    .edit input {
+        height: 5vh;
+        width: 19vw;
+        border: 1px solid #D2D2D2;
+        box-shadow: 0px 0px 4px #D2D2D2 inset;
+        font-size: 22px;
+        padding: 0.5vw;
+    }
+    .check-container{
+        display:flex;
+    }
+    .file-image{
+        position:relative;
+        display:block;
+    }
+    .file-image input{
+        position:absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        opacity:0;
+        cursor:pointer;
+    }
+    .file-upload{
+        cursor:pointer;
+        width:22.5vw;
+        height:15vh;
+        border:1px solid gray;
+        border-radius:5px;
+        text-align:center;
+        padding:4vh 0;
+    }
+    .file-upload img{
+        width:28px;
+        margin-bottom:1vh;
+    }
+
+    .selected {
+        display: none;
+    }
+   
+    .edit textarea {
+        width: 52vw;
+        height: 8vh;
+        border: 1px solid #D2D2D2;
+        box-shadow: 0px 0px 4px #D2D2D2 inset;
+        font-size: 22px;
+        padding: 0.5vw;
+		
+    }
+
+    .edit input:hover {
+        box-shadow: 0px 0px 4px black inset;
+    }
+
+    .edit input:focus {
+        box-shadow: 0px 0px 4px black inset;
+    }
+    .edit textarea:hover {
+        box-shadow: 0px 0px 4px black inset;
+    }
+
+    .edit textarea:focus {
+        box-shadow: 0px 0px 4px black inset;
+    }
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.ico {
+    background-color: white;
+    height: 5vh;
+    width: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border: 1px solid #D2D2D2;
+    box-shadow: 0px 0px 4px #D2D2D2 inset;
+}
+
+    .ico i {
+        font-size: 20px;
+        color: gray;
+    }
+
+.submit {
+    float: right;
+    margin:1vh 3vw;
+    
+}
+
+    .submit input {
+        border: none;
+        height: 2.5vw;
+        width: 12vw;
+        background-color: #3c8dbc;
+        border-radius: 10px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        margin-bottom: 3vh;
+    }
+
+        .submit input:hover {
+            box-shadow: 1px 1px 8px black;
+            transform:scale(1.1);
+        }
+
+
+
+.cephe{
+    margin:3vh 0;
+    padding:3vh 1vw;
+    border-radius:8px;
+    background-color:white;
+    
+}
+.cephe-ozelikleri {
+    text-align: left;
+}
+    .cephe-ozelikleri hr{
+        margin:1vh 0;
+    }
+    .cephe-ozelikleri h2{
+        margin-left: 15px;
+    }
+.ozellikler {
+    display: flex;
+    margin-bottom: 7vh;
+    flex-direction: column;
+}
+.ozellikler-row{
+    display:flex;
+	flex-wrap:wrap;
+	padding:0 10px;
+}
+.ozellik{
+    display:flex;
+    align-items:center;
+    margin:1.5vw 0;
+    font-size:20px;
+    width:12vw;
+        
+}
+    .ozellik label {
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 11vw;
+        height: 5vh;
+        padding-left: 0.5vw;
+        text-align: center;
+        box-shadow: 0px 0px 5px gray;
+    }
+.ozellik input{
+    cursor:pointer;
+    appearance:none;
+}
+    .ozellik label:hover {
+        border: 1px solid #1DA1F2;
+        box-shadow: 0px 0px 5px #1DA1F2;
+    }
+    .ozellik input:checked + label {
+        background-color: #1DA1F2;
+        border: 1px solid #1DA1F2;
+        box-shadow: 0px 0px 5px #1DA1F2;
+        color: white;
+    }
+
+
+.ımageedit {
+    width: 22.5vw;
+    height:15vh;
+}
+    .imagebtn {
+        height: 15vh;
+        width:22.5vw;
+        border-radius:5px;
+        cursor:pointer;
+        font-size:30px;
+        text-align:center;
+        border:none;
+        color:black;
+        padding:50px 0;
+        box-shadow:0px 0px 6px black;
+        background:bottom;
+        transition:all 0.5s ease;
+    }
+        .imagebtn:hover {
+            transform:scale(1.05);
+            box-shadow: 0px 0px 10px black;
+        }
+	.check-container{
+		margin-left:2%;
+	}
+@media screen and (max-width:850px) {
+	    .content h1 {
+        font-size: 30px;
+
+    }
+		.content {
+		height: 100%;
+		width: 100%;
+		margin-top:70px;
+		margin-left:0;
+	}
+	.profil-duzenle {
+		display: flex;
+		flex-direction:column;
+	}
+	.cow-container{
+		display:flex;
+		flex-direction:column;
+	}
+	.cow2-container{
+		display:flex;
+		flex-direction:column;
+	}
+	.aciklama-container {
+    	width: 100%;
+		margin-bottom:20px;
+
+}
+	.cow {
+		width: 100%;
+	}
+	.cow2 {
+		width: 100%;
+		height:100%;
+		margin-bottom:20px;
+	}
+	   .edit input {
+        height: 50px;
+        width: 85%;
+        border: 1px solid #D2D2D2;
+    	box-shadow: 0px 0px 4px #D2D2D2 inset;
+        font-size: 22px;
+        padding-left: 10px;
+    }
+		select {
+		height: 50px;
+		width: 85%;
+		padding-left: 10px;	
+		border: 1px solid #D2D2D2;
+    	box-shadow: 0px 0px 4px #D2D2D2 inset;
+	}
+		.ico {
+		height: 50px;
+		width: 15%;
+		border: 1px solid #D2D2D2;
+    	box-shadow: 0px 0px 4px #D2D2D2 inset;
+	}
+	    .edit textarea {
+        width: 100%;
+        height: 70px;
+		padding-left: 10px;
+ 
+    }
+	    .file-upload{
+        width:100%;
+        height:150px;
+
+    }
+		.ozellik{
+		font-size:18px;
+		width:50%;
+		text-align: center;
+        
+}
+    .ozellik label {
+        width: 97%;
+        height: 50px;
+		padding-left:10px;
+    }
+	.submit{
+		width:100%;
+		display:flex;
+		justify-content:center;
+	}
+	    .submit input {
+			border: none;
+			height: 50px;
+			width: 180px;
+			margin-bottom:15px;
+       
+    }
+	.ımageedit {
+    width: 100%;;
+    height:150px;
+}
+    .imagebtn {
+        height: 150px;
+        width:100%;
+    }
+
+
+}

@@ -1,0 +1,54 @@
+﻿@model List<danisman>
+@{
+    ViewData["Title"] = "Danismans";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+
+}
+<link rel="stylesheet" href="~/css/Panel/danismans.css">
+<div class="content">
+
+        
+            <div class="head">
+                <h1>DANIŞMANLAR</h1>
+                <a href="~/Panel/Danismansekle">
+                    <button src=""><i class="fa-solid fa-user-plus"></i>Danışman Ekle</button>
+                </a>
+            </div>
+
+            <hr>
+            <div class="danismanlar">
+                @foreach (var i in Model)
+                {
+                    if(i.Role!="Broker")
+                    {                        
+                        <div class="contain">
+                             <div class="edit">
+                                 <a href="~/Panel/DanismansDüzenle/@i.id"><i class="fa-solid fa-user-pen"></i></a>
+                                 <a href="~/Panel/DanismansDelete/@i.id"><i class="fa-solid fa-trash"></i></a>
+                             </div>
+                             <a href="~/Home/Profil/@i.id">
+                                <div class="danisman">
+                                    <img src="/Media/img/@i.DanismanFotgrafi" alt="">
+                                    <h3>@i.DanismanAdi</h3>
+                                    <i class="fa-solid fa-phone"><span>@i.DanismanGsm</span></i>
+                                    <i class="fa-solid fa-envelope"><span>@i.DanismanEmail</span></i>
+                                    <div class="danisman-icon">
+                                        <a href="@i.DanismanFace"><i id="facee" class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="@i.DanismanInsta"><i id="instaa" class="fa-brands fa-instagram"></i></a>
+                                        <a href="@i.DanismanTwitter"><i id="twitterr" class="fa-brands fa-twitter"></i></a>
+                                        <a href="@i.DanismanWp"><i id="wp" class="fa-brands fa-whatsapp"></i></a>
+                                    </div>                  
+                                </div>                
+                             </a>
+                    
+                        </div>
+                    }
+                }
+      
+
+            </div>    
+        
+   
+</div>
+
+    

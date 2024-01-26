@@ -1,0 +1,451 @@
+﻿
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #d2d2d2;
+    margin-top: 5vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 3vh;
+}
+
+.ust {
+    width: 83%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.image-container {
+    display: flex;
+    padding: 0 1vw;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    min-width:500px;
+    width:60%;
+}
+
+.big-image {
+    width: 100%;
+    height: 55vh;
+    object-fit:contain;
+    border-radius: 5px;
+    margin-right: 2vh;
+    box-shadow: 1px 1px 5px black;
+}
+
+.image {
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+}
+.image::-webkit-scrollbar {
+    background-color: transparent;
+    height: 1vh;
+}
+
+    .image::-webkit-scrollbar-thumb {
+        background-color: #4b4b4b;
+        border-radius: 20px;
+    }
+
+    .image img {
+        height: 12vh;
+        width: 20vh;
+        object-fit: contain;
+        margin: 1vh 0;
+        margin-right: 1vh;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px black;
+    }
+
+.image-ozelikler {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+}
+
+    .image-ozelikler hr {
+        margin: 1vh 0;
+    }
+
+.fiyat h2 {
+    letter-spacing: 1px;
+    font-size: 26px;
+    margin-bottom: 0.5vh;
+    font-weight: 400;
+}
+
+.fiyat h3 {
+    letter-spacing: 1px;
+    margin-bottom: 1.5vh;
+    color: rgba(0, 0, 0, 0.607);
+    font-weight: 400;
+}
+
+.ozelik {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.ozelik-adi {
+    width: 25vh;
+    letter-spacing: 1px;
+    color: rgba(32, 32, 32, 0.754);
+    text-align: left;
+}
+
+.tanimi {
+    width: 15vh;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.danisman {
+    width: 30vh;
+    height: 43vh;
+    margin: 0 2vh;
+    margin-right: 4vh;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    text-align: left;
+    padding: 2vh;
+}
+
+    .danisman a {
+        color: #323031b3;
+    }
+    .danisman img {
+        object-fit: cover;
+        width: 100%;
+        height: 25vh;
+        bottom: -10px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px black;
+    }
+
+    .danisman h3 {
+        letter-spacing: 1px;
+        font-weight: 400;
+        margin: 0.5vh 0;
+    }
+
+    .danisman i {
+        color: #323031b3;
+        margin: 0.3vh 0;
+    }
+
+        .danisman i span {
+            margin-left: 1vh;
+            letter-spacing:1px;
+        }
+
+.danisman-icon {
+    display: flex;
+    align-items: center;
+    margin: 0.5vh 0;
+    font-size: 28px;
+    height: 5vh;
+}
+
+    .danisman-icon i {
+        margin-right: 2.5vh;
+        transition: 0.4s ease;
+    }
+
+.alt {
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding: 2vh;
+    width: 85%;
+}
+
+.aciklama {
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.p {
+    width: 90%;
+    height: 100%;
+    border: 0.3px solid rgba(0, 0, 0, 0.439);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2vh;
+    padding: 2vh;
+    margin-bottom: 4vh;
+    word-spacing: 1px;
+    line-height: 30px;
+}
+
+.discephe {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2vh;
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+    .discephe h1 {
+        text-align: center;
+        margin: 1vh 0;
+    }
+
+.cephe {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    color: #1a1a1aaf;
+    font-weight: 300;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.cephe-item {
+    border: 0.3px solid rgba(0, 0, 0, 0.439);
+    border-radius: 10px;
+    padding-top: 4vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    margin-bottom: 2vh;
+}
+
+.item {
+    width: 15vh;
+    margin-bottom: 3vh;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+    .item h3 {
+        margin-left: 0.5vh;
+        width:100%;
+
+    }
+
+    .item i {
+        color: rgb(15, 189, 15);
+        font-size: 18px;
+
+    }
+.null + h3 {
+    opacity:0.5;
+}
+
+#face:hover {
+    color: #4267B2;
+	transform:scale(1.1);
+}
+
+#insta:hover {
+    color: #F56040;
+	transform:scale(1.1);
+}
+
+#twitter:hover {
+    color: #1DA1F2;
+	transform:scale(1.1);
+}
+#wp:hover {
+	color: #25D366;
+	transform:scale(1.1);
+}
+
+
+
+.lightbox-gallery {
+    background-image: linear-gradient(#4A148C, #E53935);
+    background-repeat: no-repeat;
+    color: #000;
+    overflow-x: hidden
+}
+
+    .lightbox-gallery p {
+        color: #fff
+    }
+
+    .lightbox-gallery h2 {
+        font-weight: bold;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        color: #fff
+    }
+
+@media (max-width:767px) {
+    .lightbox-gallery h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px
+    }
+}
+
+.lightbox-gallery .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+      
+}
+
+    .lightbox-gallery .intro p {
+        margin-bottom: 0
+    }
+
+.lightbox-gallery .photos {
+    padding-bottom: 20px
+}
+
+.lightbox-gallery .item {
+    padding-bottom: 30px;
+    
+}
+
+
+@media screen and (max-width:1500px) {
+    .ust {
+        height: 100%;
+        width:80%;
+    }
+    .alt {
+        width: 83%;
+    }
+    .image-ozelikler{
+        height:100%;
+        margin-left:2vw;
+    }
+   
+    .danisman{
+        display:none;
+    }
+}
+@media screen and (max-width:1100px) {
+    .ust {
+        width: 100%;
+        margin:0;
+        margin-bottom:2vh;
+        display:flex;
+        flex-direction:column;
+    }
+    .images{
+        width:100%;
+        min-width:0;
+    }
+    .big-image{
+        max-height:400px;
+    }
+   .alt{
+       width:100%;
+       padding:0;
+    
+   }
+   .cephe{
+       width:100%;
+   }
+    .cephe-item{
+        padding:0;
+        padding-left:20px;
+        padding-top:20px;
+    }
+    .item{
+       width: 18vh;
+    }
+    .danisman {
+        display: block;
+        width:35vh;
+    }
+    .ozelik {
+        width: 40vh;
+        
+    }
+    .container {
+        padding: 5vh 0;
+    }
+    .image-container {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding:0;
+    }
+    .image-ozelikler {
+        width:100%;
+        margin: 3vh 0;
+    }
+    .p{
+        width:100%;
+    }
+    .big-image{
+        width:100%;
+        height:100%;
+    }
+    .image {
+        position: relative;
+        width:100%;
+        overflow-x: auto;
+    }
+    .container {
+        border-radius: 0;
+    }
+    .danisman {
+        width: 90%;
+        height: 100%;
+        max-width:345px;
+       
+    }
+    .danisman img{
+        height:300px;
+        
+    }
+			.danisman i {
+			  margin-bottom:10px;
+        }
+		  .danisman i span {
+            font-size:18px;
+			margin-bottom:10px;
+        }
+	.danisman-icon i{
+		margin-right:40px;
+	}
+		#face {
+    color: #4267B2;
+	}
+
+	#insta {
+		color: #F56040;
+	}
+
+	#twitter {
+		color: #1DA1F2;
+	}
+		#wp {
+		color: #25D366;
+	}
+}
